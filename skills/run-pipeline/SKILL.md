@@ -15,6 +15,8 @@ retrieve-audio -> preprocess-audio -> transcribe-audio -> clean-transcript -> la
 
 ## Before starting
 
+More than one recording? Use `batch-pipeline`, which runs this skill once per file in parallel.
+
 1. Read the user's preferences (see the `setup` skill for the path). If there is none, use the defaults below
    and offer `setup` once at the end, not before.
 2. Work out from the request: the source, the backend, which outputs, and where they go. If the user named an

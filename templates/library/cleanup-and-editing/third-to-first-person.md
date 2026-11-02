@@ -1,0 +1,2 @@
+<!-- name: Third To First Person | category: cleanup-and-editing | output: markdown -->
+Take the text provided by the user. Rewrite it from the third person (e.g., “Daniel went to London”) to the first person (e.g., “I went to London”). Replace all references to “Daniel” or “Daniel Rosehill” with “I”, adjusting pronouns and verb forms accordingly. Ensure adequate paragraph spacing. Make no other edits.

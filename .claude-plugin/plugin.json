@@ -1,7 +1,7 @@
 {
   "name": "transcription-pipeline",
-  "version": "3.0.0",
-  "description": "One transcription pipeline in stages: collect a recording (local, Google Drive, S3, URL), prepare it (EQ, denoise, silence trim, downsample), transcribe it (OpenRouter/Gemini Flash, AssemblyAI, Gemini, or a local Whisper/Parakeet server), clean it (light or heavy), label speakers, reshape it (spec, minutes, to-do, blog...), typeset it (Typst PDF) and save every artefact. User preferences live in a plain file, not in the plugin.",
+  "version": "3.1.0",
+  "description": "One transcription pipeline in stages: collect a recording (local, Google Drive, S3, URL), prepare it (EQ, denoise, silence trim, downsample), transcribe it (OpenRouter/Gemini Flash, AssemblyAI, Gemini, or a local Whisper/Parakeet server), clean it (light or heavy), label speakers, reshape it (spec, minutes, to-do, blog, or any of 206 bundled text-transformation prompts), typeset it (Typst PDF) and save every artefact. Several recordings run concurrently, one worker per file. User preferences live in a plain file, not in the plugin.",
   "author": {
     "name": "Daniel Rosehill",
     "url": "https://github.com/danielrosehill"

@@ -8,6 +8,8 @@ Release tier: **medium** (tags `v3.00`, `v3.01`...; `plugin.json` keeps semver f
 - `skills/<stage>/SKILL.md`: one skill per pipeline stage; backend-specific detail in `references/`.
 - `scripts/`: `preprocess.py`, `transcribe.py`, `rewrite.py`. uv inline-dependency scripts, JSON to stdout, never
   overwrite inputs. Test them on a real clip after any change (all four backends were run on 2026-11-02).
+- `templates/library/`: 206 vendored text-transformation prompts + `index.json` (provenance in its README). Edit
+  the prompts here; the HF dataset they came from is frozen.
 - `templates/`: prompts (transcription, cleanup, speaker labels), reshape templates, EQ presets, Typst templates,
   `preferences.example.md`.
 - `idea/`: the voice note this plugin was specified from, with raw/clean/spec transcripts. Not loaded by the plugin.

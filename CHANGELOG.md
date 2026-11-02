@@ -1,5 +1,14 @@
 # Changelog
 
+## 3.1.0 (2026-11-02)
+
+- New `batch-pipeline` skill: several recordings in one request. Settles the shared settings once, then runs one
+  subagent per file (or per batch of about 4 when there are more than 8 files, at most 8 at once). Agents without
+  subagents run preprocessing and transcription in the background from the shell. Ends with one results table and the total cost.
+- New `templates/library/`: 206 text-transformation system prompts vendored from the frozen Hugging Face dataset
+  `danielrosehill/Text-Transformation-Prompts-300525`, sorted into 14 categories with an `index.json` (slug, category,
+  output format, summary). `reshape-transcript` uses it as its third template source, and still accepts a user's own prompt.
+
 ## 3.0.0 (2026-11-02)
 
 First release in this repository. Successor to `danielrosehill/Claude-Transcription-Plugin`

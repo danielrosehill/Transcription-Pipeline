@@ -1,0 +1,1654 @@
+{
+ "source": "huggingface.co/datasets/danielrosehill/Text-Transformation-Prompts-300525 (snapshot 2025-05-29, vendored 2026-11-02)",
+ "count": 206,
+ "prompts": [
+  {
+   "slug": "code-generation-prompt",
+   "name": "Code generation prompt",
+   "category": "ai-prompts",
+   "output": "markdown",
+   "path": "ai-prompts/code-generation-prompt.md",
+   "summary": "Reformat the following text into code generation instructions for software."
+  },
+  {
+   "slug": "debugging-instructions",
+   "name": "Debugging Instructions",
+   "category": "ai-prompts",
+   "output": "markdown",
+   "path": "ai-prompts/debugging-instructions.md",
+   "summary": "Take the text provided by the user and ensure that it is optimally formatted for its intended use of providing debugging instructions to an AI code generation tool."
+  },
+  {
+   "slug": "deep-research-prompt",
+   "name": "Deep Research Prompt",
+   "category": "ai-prompts",
+   "output": "markdown",
+   "path": "ai-prompts/deep-research-prompt.md",
+   "summary": "Your task is to take the text provided by the user and convert it into a well-defined, precise research prompt tailored for deep research tools like ChatGPT Deep Research or Google Gemini Deep Research."
+  },
+  {
+   "slug": "development-prompt",
+   "name": "Development Prompt",
+   "category": "ai-prompts",
+   "output": "markdown",
+   "path": "ai-prompts/development-prompt.md",
+   "summary": "Your task is to take the user-provided description and convert it into a clear set of instructions for an AI code editing tool."
+  },
+  {
+   "slug": "editing-instructions-ai-code-gen",
+   "name": "Editing Instructions (AI Code Gen)",
+   "category": "ai-prompts",
+   "output": "markdown",
+   "path": "ai-prompts/editing-instructions-ai-code-gen.md",
+   "summary": "Take the user's text and reformat it as a clear set of editing guidelines intended to direct an AI code generation assistant towards making a list of fixes to a website."
+  },
+  {
+   "slug": "general-ai-prompt",
+   "name": "General AI Prompt",
+   "category": "ai-prompts",
+   "output": "markdown",
+   "path": "ai-prompts/general-ai-prompt.md",
+   "summary": "Reformat the text provided by the user into a clear and effective prompt for a general purpose AI tool (like ChatGPT or a similar LLM)."
+  },
+  {
+   "slug": "highly-complex-instructions",
+   "name": "Highly Complex Instructions",
+   "category": "ai-prompts",
+   "output": "markdown",
+   "path": "ai-prompts/highly-complex-instructions.md",
+   "summary": "The text provided by the user documents a fairly basic process - like making toast."
+  },
+  {
+   "slug": "system-prompt",
+   "name": "System prompt",
+   "category": "ai-prompts",
+   "output": "markdown",
+   "path": "ai-prompts/system-prompt.md",
+   "summary": "Reformat the following text into a system prompt for an AI assistant."
+  },
+  {
+   "slug": "text-to-image-prompt",
+   "name": "Text To Image Prompt",
+   "category": "ai-prompts",
+   "output": "markdown",
+   "path": "ai-prompts/text-to-image-prompt.md",
+   "summary": "Optimises text as a text to image prompt"
+  },
+  {
+   "slug": "text-to-video-prompt",
+   "name": "Text To Video Prompt",
+   "category": "ai-prompts",
+   "output": "markdown",
+   "path": "ai-prompts/text-to-video-prompt.md",
+   "summary": "Edit the text provided by the user to a format that would be appropriate and effective as a text to video prompt."
+  },
+  {
+   "slug": "user-context-extractor",
+   "name": "User Context Extractor",
+   "category": "ai-prompts",
+   "output": "markdown",
+   "path": "ai-prompts/user-context-extractor.md",
+   "summary": "Take the text provided by the user and edit it into a concise context snippet intended for use by AI tools."
+  },
+  {
+   "slug": "analysis-document",
+   "name": "Analysis Document",
+   "category": "business-documents",
+   "output": "markdown",
+   "path": "business-documents/analysis-document.md",
+   "summary": "Your task is to take the text provided by the user, which includes observations and analysis of a situation or trend, and rewrite it into a well-structured, analytical-style document."
+  },
+  {
+   "slug": "brief",
+   "name": "Brief",
+   "category": "business-documents",
+   "output": "markdown",
+   "path": "business-documents/brief.md",
+   "summary": "Your task is to take the text provided by the user and reformat it into a formal brief."
+  },
+  {
+   "slug": "budget-request",
+   "name": "Budget request",
+   "category": "business-documents",
+   "output": "markdown",
+   "path": "business-documents/budget-request.md",
+   "summary": "Structure the input text into a formal budget request with justification, proposed amounts, and expected ROI."
+  },
+  {
+   "slug": "business-proposal",
+   "name": "Business Proposal",
+   "category": "business-documents",
+   "output": "markdown",
+   "path": "business-documents/business-proposal.md",
+   "summary": "Transform this speech-to-text transcript into a well-structured business proposal with the following sections: 1."
+  },
+  {
+   "slug": "contract-negotiation",
+   "name": "Contract Negotiation",
+   "category": "business-documents",
+   "output": "markdown",
+   "path": "business-documents/contract-negotiation.md",
+   "summary": "Convert the input text into precise contract negotiation language focusing on terms, conditions, and mutual obligations."
+  },
+  {
+   "slug": "creative-brief-formatter",
+   "name": "Creative Brief Formatter",
+   "category": "business-documents",
+   "output": "markdown",
+   "path": "business-documents/creative-brief-formatter.md",
+   "summary": "Take the user's text and reformat it into a clear, friendly, and effective creative brief that adheres to best practices."
+  },
+  {
+   "slug": "decision-description-generator",
+   "name": "Decision Description Generator",
+   "category": "business-documents",
+   "output": "markdown",
+   "path": "business-documents/decision-description-generator.md",
+   "summary": "Take the user's text, which discusses a difficult or major life decision, and reformat it into a structured decision-making summary."
+  },
+  {
+   "slug": "feature-request",
+   "name": "Feature request",
+   "category": "business-documents",
+   "output": "markdown",
+   "path": "business-documents/feature-request.md",
+   "summary": "Convert the user's text into a feature request."
+  },
+  {
+   "slug": "financial-review-report-creator",
+   "name": "Financial Review Report Creator",
+   "category": "business-documents",
+   "output": "markdown",
+   "path": "business-documents/financial-review-report-creator.md",
+   "summary": "Take the user's dictated review of their financial records—including observations on spending patterns, specific transactions, potential areas for cost reduction, or business health indicators—and transform it into a..."
+  },
+  {
+   "slug": "professional-opinion",
+   "name": "Professional Opinion",
+   "category": "business-documents",
+   "output": "markdown",
+   "path": "business-documents/professional-opinion.md",
+   "summary": "Take the text provided by the user which you can assume contains a professional opinion which they have been asked to profer to colleagues or a client."
+  },
+  {
+   "slug": "request-for-quotation-rfq",
+   "name": "Request For Quotation (RFQ)",
+   "category": "business-documents",
+   "output": "markdown",
+   "path": "business-documents/request-for-quotation-rfq.md",
+   "summary": "Format the input text into a professional quote request with clear specifications, quantities, and deadline requirements."
+  },
+  {
+   "slug": "rfp",
+   "name": "RFP",
+   "category": "business-documents",
+   "output": "markdown",
+   "path": "business-documents/rfp.md",
+   "summary": "Reformat the following text into a Request for Proposal (RFP)."
+  },
+  {
+   "slug": "situational-report-sitrep",
+   "name": "Situational Report (SITREP)",
+   "category": "business-documents",
+   "output": "markdown",
+   "path": "business-documents/situational-report-sitrep.md",
+   "summary": "Take the text provided by the user and edit it to achieve conformity with the formatting and text conventions seen in situational reports (SITREPs).Adopt a formal and analytical tone of voice aimed at describing..."
+  },
+  {
+   "slug": "software-research-spec",
+   "name": "Software Research Spec",
+   "category": "business-documents",
+   "output": "markdown",
+   "path": "business-documents/software-research-spec.md",
+   "summary": "Your task is to take the text provided by the user, which includes a description of the software they are looking for, its required features, and platform preferences, and generate a structured software discovery..."
+  },
+  {
+   "slug": "status-update",
+   "name": "Status Update",
+   "category": "business-documents",
+   "output": "markdown",
+   "path": "business-documents/status-update.md",
+   "summary": "Your task is to take the text provided by the user and rewrite it as a clear, concise status update suitable for sharing with a colleague or client."
+  },
+  {
+   "slug": "cover-letter-generator-basic",
+   "name": "Cover Letter Generator (Basic)",
+   "category": "career",
+   "output": "markdown",
+   "path": "career/cover-letter-generator-basic.md",
+   "summary": "Take the user's input describing who they're applying to, what position they’re applying for, why they're interested, their relevant background and qualifications, and the skills they want to highlight."
+  },
+  {
+   "slug": "impressive-job-description",
+   "name": "Impressive Job Description",
+   "category": "career",
+   "output": "markdown",
+   "path": "career/impressive-job-description.md",
+   "summary": "Your task is to reformat the text provided by the user (which contains a description of their professional duties, past or present) into an impressive-sounding job description."
+  },
+  {
+   "slug": "job-application-response-writer",
+   "name": "Job Application Response Writer",
+   "category": "career",
+   "output": "markdown",
+   "path": "career/job-application-response-writer.md",
+   "summary": "Take the user’s dictated input describing how they want to answer a specific question in a job application or online forum, including what points they want to emphasize and how they want to come across."
+  },
+  {
+   "slug": "job-description",
+   "name": "Job Description",
+   "category": "career",
+   "output": "markdown",
+   "path": "career/job-description.md",
+   "summary": "Transform the text into a professional job description with the following sections: - Job title and department - About the company/organization - Role overview and primary responsibilities - Required qualifications..."
+  },
+  {
+   "slug": "professional-materials",
+   "name": "Professional Materials",
+   "category": "career",
+   "output": "markdown",
+   "path": "career/professional-materials.md",
+   "summary": "Your task is to take the text provided by the user and reformat it into professional materials such as a CV, LinkedIn profile, brochure content, or similar documents."
+  },
+  {
+   "slug": "remote-job-application",
+   "name": "Remote Job Application",
+   "category": "career",
+   "output": "markdown",
+   "path": "career/remote-job-application.md",
+   "summary": "Transform the text into a targeted remote job application with the following structure: - A clear subject line mentioning \"Remote Position\" and role - Opening paragraph establishing remote work capability and time..."
+  },
+  {
+   "slug": "remote-job-pitch",
+   "name": "Remote job pitch",
+   "category": "career",
+   "output": "markdown",
+   "path": "career/remote-job-pitch.md",
+   "summary": "Reformat the following text into a job pitch for a remote position."
+  },
+  {
+   "slug": "resignation-note-writer",
+   "name": "Resignation Note Writer",
+   "category": "career",
+   "output": "markdown",
+   "path": "career/resignation-note-writer.md",
+   "summary": "Your task is to assist the user by helping them to draft a professional notice of resignation from a job."
+  },
+  {
+   "slug": "resume-text",
+   "name": "Resume Text",
+   "category": "career",
+   "output": "markdown",
+   "path": "career/resume-text.md",
+   "summary": "Your task is to take the description of a professional accomplishment, attribute, or skill set provided by the user and reformat it into well-written narrative text."
+  },
+  {
+   "slug": "skillset-documenter",
+   "name": "Skillset Documenter",
+   "category": "career",
+   "output": "markdown",
+   "path": "career/skillset-documenter.md",
+   "summary": "Take the user's description of their skill set and convert it into a well-structured, logically ordered, and purpose-optimized list."
+  },
+  {
+   "slug": "working-style-documenter",
+   "name": "Working Style Documenter",
+   "category": "career",
+   "output": "markdown",
+   "path": "career/working-style-documenter.md",
+   "summary": "Take the text provided by the user and edit it to provide a clear piece of documentation outlining the user's descriptions of how they like to work."
+  },
+  {
+   "slug": "300-words-or-less",
+   "name": "300 Words Or Less",
+   "category": "cleanup-and-editing",
+   "output": "markdown",
+   "path": "cleanup-and-editing/300-words-or-less.md",
+   "summary": "Transform the text to fit within a 300-word limit while preserving the most important information and key messages."
+  },
+  {
+   "slug": "500-words",
+   "name": "500 Words",
+   "category": "cleanup-and-editing",
+   "output": "markdown",
+   "path": "cleanup-and-editing/500-words.md",
+   "summary": "Transform the text to fit within a 500-word limit while preserving the important information and key messages."
+  },
+  {
+   "slug": "acronym-expansion",
+   "name": "Acronym Expansion",
+   "category": "cleanup-and-editing",
+   "output": "markdown",
+   "path": "cleanup-and-editing/acronym-expansion.md",
+   "summary": "Take the text provided by the user."
+  },
+  {
+   "slug": "basic-text-fixes",
+   "name": "Basic Text Fixes",
+   "category": "cleanup-and-editing",
+   "output": "markdown",
+   "path": "cleanup-and-editing/basic-text-fixes.md",
+   "summary": "Your task is to take the text provided by the user, which has been generated via speech-to-text, and reformat it into properly structured written text."
+  },
+  {
+   "slug": "brevity",
+   "name": "Brevity",
+   "category": "cleanup-and-editing",
+   "output": "markdown",
+   "path": "cleanup-and-editing/brevity.md",
+   "summary": "Transform the text to be as concise as possible while preserving all essential information."
+  },
+  {
+   "slug": "dejargonizer",
+   "name": "Dejargonizer",
+   "category": "cleanup-and-editing",
+   "output": "markdown",
+   "path": "cleanup-and-editing/dejargonizer.md",
+   "summary": "Your task is to take the text provided by the user and edit it to ensure clarity, intelligibility, and accessibility for a general audience."
+  },
+  {
+   "slug": "document-summary-generator",
+   "name": "Document Summary Generator",
+   "category": "cleanup-and-editing",
+   "output": "markdown",
+   "path": "cleanup-and-editing/document-summary-generator.md",
+   "summary": "The text provided by the user contains a verbal summary of a document which they are describing (likely correspondence they received)."
+  },
+  {
+   "slug": "fact-identification",
+   "name": "Fact Identification",
+   "category": "cleanup-and-editing",
+   "output": "markdown",
+   "path": "cleanup-and-editing/fact-identification.md",
+   "summary": "Identify and extract factual claims from the text."
+  },
+  {
+   "slug": "first-to-third-person",
+   "name": "First To Third Person",
+   "category": "cleanup-and-editing",
+   "output": "markdown",
+   "path": "cleanup-and-editing/first-to-third-person.md",
+   "summary": "Take the text provided by the user (Daniel Rosehill)."
+  },
+  {
+   "slug": "k1-reading-level",
+   "name": "K1 Reading Level",
+   "category": "cleanup-and-editing",
+   "output": "markdown",
+   "path": "cleanup-and-editing/k1-reading-level.md",
+   "summary": "Edit the text provided by the user by ensuring that it is at a K1 reading level approximately focusing on simplifying vocabularly and making other change to render the text suitable for this reading level."
+  },
+  {
+   "slug": "light-edits-for-clarity",
+   "name": "Light edits for clarity",
+   "category": "cleanup-and-editing",
+   "output": "markdown",
+   "path": "cleanup-and-editing/light-edits-for-clarity.md",
+   "summary": "Your task is to take the text provided by the user and edit it lightly to ensure clarity and flow, but preserve all the meaning provided by the user."
+  },
+  {
+   "slug": "main-points-bullet-points",
+   "name": "Main Points (Bullet Points)",
+   "category": "cleanup-and-editing",
+   "output": "markdown",
+   "path": "cleanup-and-editing/main-points-bullet-points.md",
+   "summary": "Take the user's text and distill it into a concise summary that focuses on the main points and key takeaways."
+  },
+  {
+   "slug": "minimalist",
+   "name": "Minimalist",
+   "category": "cleanup-and-editing",
+   "output": "markdown",
+   "path": "cleanup-and-editing/minimalist.md",
+   "summary": "Transform the provided text into a minimalist style."
+  },
+  {
+   "slug": "names-to-acronyms",
+   "name": "Names To Acronyms",
+   "category": "cleanup-and-editing",
+   "output": "markdown",
+   "path": "cleanup-and-editing/names-to-acronyms.md",
+   "summary": "Edit the text provided by the user with the following instruction: Take all individuals named in the text and change them to acronyms."
+  },
+  {
+   "slug": "simplify",
+   "name": "Simplify",
+   "category": "cleanup-and-editing",
+   "output": "markdown",
+   "path": "cleanup-and-editing/simplify.md",
+   "summary": "Simplify the text provided by the user as much as possible while preserving all detail and meaning."
+  },
+  {
+   "slug": "text-anonymisation-editor",
+   "name": "Text Anonymisation Editor",
+   "category": "cleanup-and-editing",
+   "output": "markdown",
+   "path": "cleanup-and-editing/text-anonymisation-editor.md",
+   "summary": "Take the user's text and return a redacted version suitable for documentation or public sharing."
+  },
+  {
+   "slug": "third-to-first-person",
+   "name": "Third To First Person",
+   "category": "cleanup-and-editing",
+   "output": "markdown",
+   "path": "cleanup-and-editing/third-to-first-person.md",
+   "summary": "Take the text provided by the user."
+  },
+  {
+   "slug": "documentation-general",
+   "name": "Documentation (General)",
+   "category": "documentation",
+   "output": "markdown",
+   "path": "documentation/documentation-general.md",
+   "summary": "Reformat the following text into general documentation."
+  },
+  {
+   "slug": "emergency-procedures-documenter",
+   "name": "Emergency Procedures Documenter",
+   "category": "documentation",
+   "output": "markdown",
+   "path": "documentation/emergency-procedures-documenter.md",
+   "summary": "Take the user's text and reformat it as a clear, timestamped emergency preparedness and safety procedure document."
+  },
+  {
+   "slug": "friendly-tech-docs",
+   "name": "Friendly Tech Docs",
+   "category": "documentation",
+   "output": "markdown",
+   "path": "documentation/friendly-tech-docs.md",
+   "summary": "This prompt is intended to create technical documentation that is more approachable and less ..."
+  },
+  {
+   "slug": "n8n-workflow-documentation",
+   "name": "N8N Workflow Documentation",
+   "category": "documentation",
+   "output": "markdown",
+   "path": "documentation/n8n-workflow-documentation.md",
+   "summary": "Convert this text into a coherent workflow description explaining the purpose and operation of this automation."
+  },
+  {
+   "slug": "networking-setup-documenter",
+   "name": "Networking Setup Documenter",
+   "category": "documentation",
+   "output": "markdown",
+   "path": "documentation/networking-setup-documenter.md",
+   "summary": "Your task is to assist the user by converting the text that they have provided into a document which records a home networking setup."
+  },
+  {
+   "slug": "process-document-generator",
+   "name": "Process Document Generator",
+   "category": "documentation",
+   "output": "markdown",
+   "path": "documentation/process-document-generator.md",
+   "summary": "Take the user's text and reformat it as a structured internal process documentation note."
+  },
+  {
+   "slug": "readme-text",
+   "name": "README Text",
+   "category": "documentation",
+   "output": "markdown",
+   "path": "documentation/readme-text.md",
+   "summary": "Reformat the following text into a README file for a GitHub repository."
+  },
+  {
+   "slug": "sop-creator",
+   "name": "SOP Creator",
+   "category": "documentation",
+   "output": "markdown",
+   "path": "documentation/sop-creator.md",
+   "summary": "Your task is to take the information provided by the user describing the SOP for their business and generate a formal SOP document according to standard conventions."
+  },
+  {
+   "slug": "tech-documentation",
+   "name": "Tech Documentation",
+   "category": "documentation",
+   "output": "markdown",
+   "path": "documentation/tech-documentation.md",
+   "summary": "Convert this text into well-structured and clear technical documentation."
+  },
+  {
+   "slug": "technical-documentation",
+   "name": "Technical Documentation",
+   "category": "documentation",
+   "output": "markdown",
+   "path": "documentation/technical-documentation.md",
+   "summary": "Transform the text into clear, precise technical documentation."
+  },
+  {
+   "slug": "bluf-email-writer",
+   "name": "BLUF Email Writer",
+   "category": "email-and-correspondence",
+   "output": "markdown",
+   "path": "email-and-correspondence/bluf-email-writer.md",
+   "summary": "Take the text provided by the user and edit it into the format of an email with a bottom line up front (BLUF) header section."
+  },
+  {
+   "slug": "business-correspondence",
+   "name": "Business correspondence",
+   "category": "email-and-correspondence",
+   "output": "markdown",
+   "path": "email-and-correspondence/business-correspondence.md",
+   "summary": "Reformat the following text into professional business correspondence."
+  },
+  {
+   "slug": "business-email",
+   "name": "Business Email",
+   "category": "email-and-correspondence",
+   "output": "markdown",
+   "path": "email-and-correspondence/business-email.md",
+   "summary": "Transform the text into a professional business email."
+  },
+  {
+   "slug": "casual-email",
+   "name": "Casual Email",
+   "category": "email-and-correspondence",
+   "output": "markdown",
+   "path": "email-and-correspondence/casual-email.md",
+   "summary": "Reformat the following text into a casual email message."
+  },
+  {
+   "slug": "civic-engagement-letters",
+   "name": "Civic Engagement Letters",
+   "category": "email-and-correspondence",
+   "output": "markdown",
+   "path": "email-and-correspondence/civic-engagement-letters.md",
+   "summary": "Take the text provided by the user and reformat it as a formal letter addressed to a local government body or elected official."
+  },
+  {
+   "slug": "cold-pitch",
+   "name": "Cold pitch",
+   "category": "email-and-correspondence",
+   "output": "markdown",
+   "path": "email-and-correspondence/cold-pitch.md",
+   "summary": "Reformat the following text into a cold pitch."
+  },
+  {
+   "slug": "email-generator-structured",
+   "name": "Email Generator (Structured)",
+   "category": "email-and-correspondence",
+   "output": "json",
+   "path": "email-and-correspondence/email-generator-structured.md",
+   "summary": "Take the text provided by the user and reformat it as a structured email."
+  },
+  {
+   "slug": "expression-of-interest-writer",
+   "name": "Expression Of Interest Writer",
+   "category": "email-and-correspondence",
+   "output": "markdown",
+   "path": "email-and-correspondence/expression-of-interest-writer.md",
+   "summary": "Take the user's input describing the company they’re interested in, why they’re drawn to it, their relevant background and qualifications, and the skills they want to highlight."
+  },
+  {
+   "slug": "interview-thank-you",
+   "name": "Interview Thank You",
+   "category": "email-and-correspondence",
+   "output": "markdown",
+   "path": "email-and-correspondence/interview-thank-you.md",
+   "summary": "Transform the text into a professional post-interview thank you note with the following structure: - Express appreciation for the interviewer's time - Reference specific discussion points from the interview - Address..."
+  },
+  {
+   "slug": "invitation-generator",
+   "name": "Invitation Generator",
+   "category": "email-and-correspondence",
+   "output": "markdown",
+   "path": "email-and-correspondence/invitation-generator.md",
+   "summary": "Your task is to take the text provided by the user, which includes details about an event (such as event name, recipient, date, time, location, etc.), and reformat it into a well-written invitation."
+  },
+  {
+   "slug": "polished-business-email",
+   "name": "Polished Business Email",
+   "category": "email-and-correspondence",
+   "output": "markdown",
+   "path": "email-and-correspondence/polished-business-email.md",
+   "summary": "Take the user's text and convert it into a polished and professional business email."
+  },
+  {
+   "slug": "rsvp-confirmation",
+   "name": "RSVP Confirmation",
+   "category": "email-and-correspondence",
+   "output": "markdown",
+   "path": "email-and-correspondence/rsvp-confirmation.md",
+   "summary": "Take the text provided by the user and edit it into a formal RSVP response."
+  },
+  {
+   "slug": "slack-community-intro",
+   "name": "Slack community intro",
+   "category": "email-and-correspondence",
+   "output": "markdown",
+   "path": "email-and-correspondence/slack-community-intro.md",
+   "summary": "Take this text and refromat it as a friendly introduction to a Slack community."
+  },
+  {
+   "slug": "team-management-email",
+   "name": "Team Management Email",
+   "category": "email-and-correspondence",
+   "output": "markdown",
+   "path": "email-and-correspondence/team-management-email.md",
+   "summary": "Structure the input text into clear directives for team members with specific tasks, deadlines, and expected outcomes."
+  },
+  {
+   "slug": "tech-inquiries",
+   "name": "Tech Inquiries",
+   "category": "email-and-correspondence",
+   "output": "markdown",
+   "path": "email-and-correspondence/tech-inquiries.md",
+   "summary": "Your task is to take the text provided by the user, which describes their question or inquiry about a technology product or service, and reformat it into a precise, coherent message."
+  },
+  {
+   "slug": "tech-support-ticket",
+   "name": "Tech Support Ticket",
+   "category": "email-and-correspondence",
+   "output": "markdown",
+   "path": "email-and-correspondence/tech-support-ticket.md",
+   "summary": "Take the text provided by the user and reformat it to conform with the expected format and language of a tech support ticket."
+  },
+  {
+   "slug": "add-random-accents",
+   "name": "Add Random Accents",
+   "category": "humour-and-novelty",
+   "output": "markdown",
+   "path": "humour-and-novelty/add-random-accents.md",
+   "summary": "Edit the text provided by the user according to the following instruction: add unnecessary accents (like ë)."
+  },
+  {
+   "slug": "add-trigger-warnings",
+   "name": "Add Trigger Warnings",
+   "category": "humour-and-novelty",
+   "output": "markdown",
+   "path": "humour-and-novelty/add-trigger-warnings.md",
+   "summary": "Edit the text provided by the user which may contain graphic depictions of violence or other elements that may cause distress (assume as context that the user is documenting a painful experience they went through for..."
+  },
+  {
+   "slug": "clickbait-king",
+   "name": "Clickbait King",
+   "category": "humour-and-novelty",
+   "output": "markdown",
+   "path": "humour-and-novelty/clickbait-king.md",
+   "summary": "Take the text provided by the user and reformat it according to the following instructions: - Edit the text so that it mimics the type of scintillating style seen in online clickbait content and tabloid journalism."
+  },
+  {
+   "slug": "cryptic-dispatches",
+   "name": "Cryptic Dispatches",
+   "category": "humour-and-novelty",
+   "output": "markdown",
+   "path": "humour-and-novelty/cryptic-dispatches.md",
+   "summary": "Edit the text provided by the user to invite a sense of curiosity from readers as to what the user is hiding and what the user is truly engaging in."
+  },
+  {
+   "slug": "deadbeat-personality",
+   "name": "Deadbeat Personality",
+   "category": "humour-and-novelty",
+   "output": "markdown",
+   "path": "humour-and-novelty/deadbeat-personality.md",
+   "summary": "Your task is to take the text provided by the user and reformat it so that it frames the user as an unmotivated and unambitious person."
+  },
+  {
+   "slug": "depressing-text",
+   "name": "Depressing Text",
+   "category": "humour-and-novelty",
+   "output": "markdown",
+   "path": "humour-and-novelty/depressing-text.md",
+   "summary": "Makes text as bleak as possible"
+  },
+  {
+   "slug": "dramatic-style",
+   "name": "Dramatic Style",
+   "category": "humour-and-novelty",
+   "output": "markdown",
+   "path": "humour-and-novelty/dramatic-style.md",
+   "summary": "Take the text provided by the user."
+  },
+  {
+   "slug": "emoji-maximiser",
+   "name": "Emoji Maximiser",
+   "category": "humour-and-novelty",
+   "output": "markdown",
+   "path": "humour-and-novelty/emoji-maximiser.md",
+   "summary": "Take the text edited by the user and edit it by injecting a large number and variety of emojis."
+  },
+  {
+   "slug": "fancy-menu-invitation-creator",
+   "name": "Fancy Menu & Invitation Creator",
+   "category": "humour-and-novelty",
+   "output": "markdown",
+   "path": "humour-and-novelty/fancy-menu-invitation-creator.md",
+   "summary": "Take the user’s description of a dinner they are preparing and transform it into a refined and imaginative invitation to a banquet."
+  },
+  {
+   "slug": "flamboyant",
+   "name": "Flamboyant",
+   "category": "humour-and-novelty",
+   "output": "markdown",
+   "path": "humour-and-novelty/flamboyant.md",
+   "summary": "Your task is to take the text provided by the user and reimagine it with dramatic flair, eccentricity, and artistic creativity."
+  },
+  {
+   "slug": "flamboyant-invitation-generator",
+   "name": "Flamboyant Invitation Generator",
+   "category": "humour-and-novelty",
+   "output": "markdown",
+   "path": "humour-and-novelty/flamboyant-invitation-generator.md",
+   "summary": "Your task is to take this description of an upcoming event and transform it into a flamboyantly worded formal invitation."
+  },
+  {
+   "slug": "grandpa-text",
+   "name": "Grandpa Text",
+   "category": "humour-and-novelty",
+   "output": "markdown",
+   "path": "humour-and-novelty/grandpa-text.md",
+   "summary": "Take the text provided by the user and edit it so that it has the feel and grammar of an older male individual (aged 70 or older)."
+  },
+  {
+   "slug": "grey-rocking-text",
+   "name": "Grey Rocking Text",
+   "category": "humour-and-novelty",
+   "output": "markdown",
+   "path": "humour-and-novelty/grey-rocking-text.md",
+   "summary": "Take the text provided by the user."
+  },
+  {
+   "slug": "haute-cuisine-recipe-generator",
+   "name": "Haute Cuisine Recipe Generator",
+   "category": "humour-and-novelty",
+   "output": "markdown",
+   "path": "humour-and-novelty/haute-cuisine-recipe-generator.md",
+   "summary": "Take the user's description of a dish they know how to cook—including ingredients, method, and personal notes—and transform it into a refined recipe written in the style of haute cuisine."
+  },
+  {
+   "slug": "highly-enthusiastic",
+   "name": "Highly Enthusiastic",
+   "category": "humour-and-novelty",
+   "output": "markdown",
+   "path": "humour-and-novelty/highly-enthusiastic.md",
+   "summary": "Your task is to take the text provided by the user and rewrite it to make it highly enthusiastic, positive, and upbeat."
+  },
+  {
+   "slug": "humblebrag-this-text",
+   "name": "Humblebrag This Text",
+   "category": "humour-and-novelty",
+   "output": "markdown",
+   "path": "humour-and-novelty/humblebrag-this-text.md",
+   "summary": "Take the text provided by the user and edit it so that it follows the form and structure typically scene in posts usually criticised as \"humble brags\" on LinkedIn."
+  },
+  {
+   "slug": "hyperbolic-corporate-emails",
+   "name": "Hyperbolic Corporate Emails",
+   "category": "humour-and-novelty",
+   "output": "markdown",
+   "path": "humour-and-novelty/hyperbolic-corporate-emails.md",
+   "summary": "Take the text provided by the user (Daniel)."
+  },
+  {
+   "slug": "late-night-tv-script",
+   "name": "Late Night TV Script",
+   "category": "humour-and-novelty",
+   "output": "markdown",
+   "path": "humour-and-novelty/late-night-tv-script.md",
+   "summary": "Take the text provided by the user which you can assume to be the script for a video (or the dictated equivalent)."
+  },
+  {
+   "slug": "longwinded-messages",
+   "name": "Longwinded messages",
+   "category": "humour-and-novelty",
+   "output": "markdown",
+   "path": "humour-and-novelty/longwinded-messages.md",
+   "summary": "Rewrite this text to conform to the style of a longwinded and drawn out message or diary entry (as appropriate)."
+  },
+  {
+   "slug": "platitude-stuffer",
+   "name": "Platitude Stuffer",
+   "category": "humour-and-novelty",
+   "output": "markdown",
+   "path": "humour-and-novelty/platitude-stuffer.md",
+   "summary": "Your task is to take the text provided by the user and rewrite it by adding a variety of platitudes to make the text longer."
+  },
+  {
+   "slug": "pseudobot-text",
+   "name": "Pseudobot Text",
+   "category": "humour-and-novelty",
+   "output": "markdown",
+   "path": "humour-and-novelty/pseudobot-text.md",
+   "summary": "Your task is to take the text provided by the user, which contains a message for someone the user knows, and rewrite it to include artifacts that create the impression that the message was auto-generated by a program..."
+  },
+  {
+   "slug": "random-all-caps",
+   "name": "Random All Caps",
+   "category": "humour-and-novelty",
+   "output": "markdown",
+   "path": "humour-and-novelty/random-all-caps.md",
+   "summary": "Your task is to take the text provided by the user, make necessary edits to improve clarity or flow, and randomly insert all-caps words or phrases for emphasis."
+  },
+  {
+   "slug": "say-nothing-at-length",
+   "name": "Say Nothing At Length",
+   "category": "humour-and-novelty",
+   "output": "markdown",
+   "path": "humour-and-novelty/say-nothing-at-length.md",
+   "summary": "Edit the text provided by the user according to the following instruction: your task is to make the text as long as possible while minimising the amount of actual meaning or useful information it contains."
+  },
+  {
+   "slug": "shakespearean-emails",
+   "name": "Shakespearean Emails",
+   "category": "humour-and-novelty",
+   "output": "markdown",
+   "path": "humour-and-novelty/shakespearean-emails.md",
+   "summary": "Your task is to take the text provided by the user, which will be a business email, and rewrite it with a few touches of Shakespearean language."
+  },
+  {
+   "slug": "snobby-aristocrat",
+   "name": "Snobby Aristocrat",
+   "category": "humour-and-novelty",
+   "output": "markdown",
+   "path": "humour-and-novelty/snobby-aristocrat.md",
+   "summary": "Edit the text provided by the user to imbue it with the tone and perspective of a member of the aristocracy."
+  },
+  {
+   "slug": "style-inverter",
+   "name": "Style Inverter",
+   "category": "humour-and-novelty",
+   "output": "markdown",
+   "path": "humour-and-novelty/style-inverter.md",
+   "summary": "Take the text provided by the user and edit it to change the user's style of writing to a random different style that is markedly different from their natural one."
+  },
+  {
+   "slug": "template-tony",
+   "name": "Template Tony",
+   "category": "humour-and-novelty",
+   "output": "markdown",
+   "path": "humour-and-novelty/template-tony.md",
+   "summary": "Take the text provided by the user and edit it to achieve the feeling of highly formulaic and templated correspondence that suggests strongly that it was automatically generated."
+  },
+  {
+   "slug": "victorian",
+   "name": "Victorian",
+   "category": "humour-and-novelty",
+   "output": "markdown",
+   "path": "humour-and-novelty/victorian.md",
+   "summary": "Transform the provided text into a refined, Victorian-era style."
+  },
+  {
+   "slug": "world-weary",
+   "name": "World-Weary",
+   "category": "humour-and-novelty",
+   "output": "markdown",
+   "path": "humour-and-novelty/world-weary.md",
+   "summary": "Edit the text provided by the user to inject it with a general sense of fatigue and world-weariness."
+  },
+  {
+   "slug": "american-english-standardisation",
+   "name": "American English Standardisation",
+   "category": "language",
+   "output": "markdown",
+   "path": "language/american-english-standardisation.md",
+   "summary": "Edit the text provided by the user to ensure that it is standardised on American English."
+  },
+  {
+   "slug": "british-english-standardisation",
+   "name": "British English Standardisation",
+   "category": "language",
+   "output": "markdown",
+   "path": "language/british-english-standardisation.md",
+   "summary": "Edit the text provided by the user to ensure that it is standardised on British English."
+  },
+  {
+   "slug": "casual-hebrew",
+   "name": "Casual Hebrew",
+   "category": "language",
+   "output": "markdown",
+   "path": "language/casual-hebrew.md",
+   "summary": "Your task is to take the text dictated by the user and translate it into casual, friendly Hebrew, suitable for informal conversations or shorter messages."
+  },
+  {
+   "slug": "formal-hebrew",
+   "name": "Formal Hebrew",
+   "category": "language",
+   "output": "markdown",
+   "path": "language/formal-hebrew.md",
+   "summary": "Your task is to take the text dictated by the user and translate it into formal Hebrew, suitable for business communications such as business emails."
+  },
+  {
+   "slug": "hebrew-email",
+   "name": "Hebrew email",
+   "category": "language",
+   "output": "markdown",
+   "path": "language/hebrew-email.md",
+   "summary": "Take this text and rewrite it as an email in business appropriate Hebrew."
+  },
+  {
+   "slug": "hebrish",
+   "name": "Hebrish",
+   "category": "language",
+   "output": "markdown",
+   "path": "language/hebrish.md",
+   "summary": "Edit this text by converting it into \"Hebrish\" - a mixture of English and Hebrew popular among English speaking immigrants to Israel."
+  },
+  {
+   "slug": "random-foreign-words",
+   "name": "Random Foreign Words",
+   "category": "language",
+   "output": "markdown",
+   "path": "language/random-foreign-words.md",
+   "summary": "Your task is to take the text provided by the user and rewrite it by randomly inserting words in Italian, French, and Spanish."
+  },
+  {
+   "slug": "family-meeting",
+   "name": "Family meeting",
+   "category": "meetings",
+   "output": "markdown",
+   "path": "meetings/family-meeting.md",
+   "summary": "Your task is to take the text provided by the user and create a structured, organized agenda for an upcoming family or social meeting."
+  },
+  {
+   "slug": "internal-meeting-report-formatter",
+   "name": "Internal Meeting Report Formatter",
+   "category": "meetings",
+   "output": "markdown",
+   "path": "meetings/internal-meeting-report-formatter.md",
+   "summary": "Your task is to convert the user's meeting notes into a detailed internal report suitable for sharing with colleagues."
+  },
+  {
+   "slug": "meeting-agenda",
+   "name": "Meeting Agenda",
+   "category": "meetings",
+   "output": "markdown",
+   "path": "meetings/meeting-agenda.md",
+   "summary": "Take the user's text and reformat it into a structured meeting agenda."
+  },
+  {
+   "slug": "meeting-debrief",
+   "name": "Meeting Debrief",
+   "category": "meetings",
+   "output": "markdown",
+   "path": "meetings/meeting-debrief.md",
+   "summary": "Your task is to take the text provided by the user describing the contents of a meeting and transform it into a targeted meeting debrief."
+  },
+  {
+   "slug": "meeting-minutes-external-client-use",
+   "name": "Meeting Minutes - External / Client Use",
+   "category": "meetings",
+   "output": "markdown",
+   "path": "meetings/meeting-minutes-external-client-use.md",
+   "summary": "Take the user's note and generate a set of meeting minutes suitable for external circulation."
+  },
+  {
+   "slug": "meeting-minutes-for-internal-use",
+   "name": "Meeting Minutes - For Internal Use",
+   "category": "meetings",
+   "output": "markdown",
+   "path": "meetings/meeting-minutes-for-internal-use.md",
+   "summary": "Take the user's note and generate a set of meeting minutes written from the user's perspective."
+  },
+  {
+   "slug": "notes-for-a-meeting",
+   "name": "Notes For A Meeting",
+   "category": "meetings",
+   "output": "markdown",
+   "path": "meetings/notes-for-a-meeting.md",
+   "summary": "Take the text provided by the user which contains a list of points that they wish to raise at an upcoming meeting."
+  },
+  {
+   "slug": "shared-meeting-agenda",
+   "name": "Shared Meeting Agenda",
+   "category": "meetings",
+   "output": "markdown",
+   "path": "meetings/shared-meeting-agenda.md",
+   "summary": "The text provided by the user should be reformatted according to the following instructions: - The edited text should be formatted as a meeting agenda that the user (Daniel) will share with the recipients ahead of..."
+  },
+  {
+   "slug": "social-meeting-agenda",
+   "name": "Social Meeting Agenda",
+   "category": "meetings",
+   "output": "markdown",
+   "path": "meetings/social-meeting-agenda.md",
+   "summary": "Take the text provided by the user and reformat it into a formal agenda intended for a meeting with friends."
+  },
+  {
+   "slug": "talking-points-generator",
+   "name": "Talking Points Generator",
+   "category": "meetings",
+   "output": "markdown",
+   "path": "meetings/talking-points-generator.md",
+   "summary": "Take the text provided by the user which contains notes that they have dictated ahead of a meeting or media appearance."
+  },
+  {
+   "slug": "brainstorming-session",
+   "name": "Brainstorming Session",
+   "category": "personal-and-journal",
+   "output": "markdown",
+   "path": "personal-and-journal/brainstorming-session.md",
+   "summary": "Your task is to take the long list of ideas generated by the user during a brainstorming session and reformat it into an organized, actionable takeaway."
+  },
+  {
+   "slug": "food-journal-creator",
+   "name": "Food Journal Creator",
+   "category": "personal-and-journal",
+   "output": "markdown",
+   "path": "personal-and-journal/food-journal-creator.md",
+   "summary": "Your task is to take the text provided by the user and edit it into the format of a food journal."
+  },
+  {
+   "slug": "general-idea-capture",
+   "name": "General Idea Capture",
+   "category": "personal-and-journal",
+   "output": "markdown",
+   "path": "personal-and-journal/general-idea-capture.md",
+   "summary": "Your task is to take the text provided by the user and format it into a well-documented idea."
+  },
+  {
+   "slug": "goal-documenter",
+   "name": "Goal Documenter",
+   "category": "personal-and-journal",
+   "output": "markdown",
+   "path": "personal-and-journal/goal-documenter.md",
+   "summary": "Your task is to take the text provided by the user and format is as a well structured document noting clearly a goal that they have set for themselves and described in the text you were provided with."
+  },
+  {
+   "slug": "i-failed",
+   "name": "I Failed",
+   "category": "personal-and-journal",
+   "output": "markdown",
+   "path": "personal-and-journal/i-failed.md",
+   "summary": "Take the text provided by the user, which contains a description of something they failed at."
+  },
+  {
+   "slug": "journal-entry",
+   "name": "Journal Entry",
+   "category": "personal-and-journal",
+   "output": "markdown",
+   "path": "personal-and-journal/journal-entry.md",
+   "summary": "Format the input text as a reflective journal entry with date/time stamp."
+  },
+  {
+   "slug": "learning-objective",
+   "name": "Learning Objective",
+   "category": "personal-and-journal",
+   "output": "markdown",
+   "path": "personal-and-journal/learning-objective.md",
+   "summary": "Take the text provided by the user and edit it into an organised document stating something that they wish to learn about."
+  },
+  {
+   "slug": "medical-problem-documenter",
+   "name": "Medical Problem Documenter",
+   "category": "personal-and-journal",
+   "output": "markdown",
+   "path": "personal-and-journal/medical-problem-documenter.md",
+   "summary": "Take the text provided by the user which contains a description of a medical problem they have been experiencing."
+  },
+  {
+   "slug": "mental-health-journal-entry",
+   "name": "Mental Health Journal Entry",
+   "category": "personal-and-journal",
+   "output": "markdown",
+   "path": "personal-and-journal/mental-health-journal-entry.md",
+   "summary": "Take the text provided by the user and edit it into the format of an organised mental health journal entry."
+  },
+  {
+   "slug": "note-to-self",
+   "name": "Note To Self",
+   "category": "personal-and-journal",
+   "output": "markdown",
+   "path": "personal-and-journal/note-to-self.md",
+   "summary": "Reformat the following text into a note to self."
+  },
+  {
+   "slug": "statement-of-belief",
+   "name": "Statement Of Belief",
+   "category": "personal-and-journal",
+   "output": "markdown",
+   "path": "personal-and-journal/statement-of-belief.md",
+   "summary": "Your task is to take the text provided by the user and edit it into a document that is intended to help them capture a belief or something about themselves that they hold strongly."
+  },
+  {
+   "slug": "therapy-session-prep-doc",
+   "name": "Therapy Session Prep Doc",
+   "category": "personal-and-journal",
+   "output": "markdown",
+   "path": "personal-and-journal/therapy-session-prep-doc.md",
+   "summary": "Take the text provided by the user which contains their description of things they wish to cover at an upcoming therapy session."
+  },
+  {
+   "slug": "wishlist-item-documenter",
+   "name": "Wishlist Item Documenter",
+   "category": "personal-and-journal",
+   "output": "markdown",
+   "path": "personal-and-journal/wishlist-item-documenter.md",
+   "summary": "Take the user's description of an item they are considering purchasing and generate a structured \"Wishlist Item Document\" in Markdown."
+  },
+  {
+   "slug": "appointment-documenter",
+   "name": "Appointment Documenter",
+   "category": "planning-and-tasks",
+   "output": "markdown",
+   "path": "planning-and-tasks/appointment-documenter.md",
+   "summary": "Your task is to assist the user by converting the text they provided and reformatting it into a well organised document summarising the conclusions of an appointment which they are describing."
+  },
+  {
+   "slug": "appointment-summary-creator",
+   "name": "Appointment Summary Creator",
+   "category": "planning-and-tasks",
+   "output": "markdown",
+   "path": "planning-and-tasks/appointment-summary-creator.md",
+   "summary": "Your task is to take the text provided by the user regarding an appointment (e.g., therapy session, medical appointment, etc.) and create a concise summary of the appointment."
+  },
+  {
+   "slug": "calendar-entry-not-structured",
+   "name": "Calendar Entry (Not Structured)",
+   "category": "planning-and-tasks",
+   "output": "markdown",
+   "path": "planning-and-tasks/calendar-entry-not-structured.md",
+   "summary": "Transform the text into a structured calendar entry with the following components: - Event title/name - Date (in YYYY-MM-DD format) - Start and end time - Location (physical or virtual) - Description/details -..."
+  },
+  {
+   "slug": "checklist-maker",
+   "name": "Checklist Maker",
+   "category": "planning-and-tasks",
+   "output": "markdown",
+   "path": "planning-and-tasks/checklist-maker.md",
+   "summary": "Your task is to take the information and text provided by the user, which describes a list of checks they need to do before a certain task or event, and reformat it into a clear, organized checklist."
+  },
+  {
+   "slug": "chore-list",
+   "name": "Chore List",
+   "category": "planning-and-tasks",
+   "output": "markdown",
+   "path": "planning-and-tasks/chore-list.md",
+   "summary": "Your task is to take the text provided by the user and turn it into a clear, organized list of household chores."
+  },
+  {
+   "slug": "daily-work-plan",
+   "name": "Daily Work Plan",
+   "category": "planning-and-tasks",
+   "output": "markdown",
+   "path": "planning-and-tasks/daily-work-plan.md",
+   "summary": "Your task is to take the text provided by the user and convert it into a clear, organized daily plan."
+  },
+  {
+   "slug": "inventory-from-speech",
+   "name": "Inventory From Speech",
+   "category": "planning-and-tasks",
+   "output": "markdown",
+   "path": "planning-and-tasks/inventory-from-speech.md",
+   "summary": "Your task is to extract and isolate any items, objects, or possessions described in the user's text, along with specific identifying details such as serial numbers, part numbers, or model names."
+  },
+  {
+   "slug": "itinerary",
+   "name": "Itinerary",
+   "category": "planning-and-tasks",
+   "output": "markdown",
+   "path": "planning-and-tasks/itinerary.md",
+   "summary": "Your task is to take the text provided by the user, which may include an approximate or detailed itinerary, and reformat it into a precise, structured itinerary document."
+  },
+  {
+   "slug": "plan-of-action-documenter",
+   "name": "Plan of action documenter",
+   "category": "planning-and-tasks",
+   "output": "markdown",
+   "path": "planning-and-tasks/plan-of-action-documenter.md",
+   "summary": "Take the user's description of an upcoming or expected event and return a well-organized, easy-to-follow plan document."
+  },
+  {
+   "slug": "project-plan-generator",
+   "name": "Project Plan Generator",
+   "category": "planning-and-tasks",
+   "output": "markdown",
+   "path": "planning-and-tasks/project-plan-generator.md",
+   "summary": "Your task is to take the text provided by the user and return it as an organised project planning document."
+  },
+  {
+   "slug": "roster-generator",
+   "name": "Roster Generator",
+   "category": "planning-and-tasks",
+   "output": "markdown",
+   "path": "planning-and-tasks/roster-generator.md",
+   "summary": "Take the user's description of a schedule or availability roster and return a structured, date-specific roster in a clear and organized format."
+  },
+  {
+   "slug": "task-planner",
+   "name": "Task Planner",
+   "category": "planning-and-tasks",
+   "output": "markdown",
+   "path": "planning-and-tasks/task-planner.md",
+   "summary": "Your task is to take the text provided by the user, which includes a specific task and a description of how the user plans to achieve it, and create a structured document outlining the plan of action."
+  },
+  {
+   "slug": "task-progress-report-for-own-systems",
+   "name": "Task Progress Report (For Own Systems)",
+   "category": "planning-and-tasks",
+   "output": "markdown",
+   "path": "planning-and-tasks/task-progress-report-for-own-systems.md",
+   "summary": "Take the user's text and reformat it as a structured project log entry intended for personal record keeping."
+  },
+  {
+   "slug": "task-retrospective",
+   "name": "Task Retrospective",
+   "category": "planning-and-tasks",
+   "output": "markdown",
+   "path": "planning-and-tasks/task-retrospective.md",
+   "summary": "Take the user's text and reformat it to accord wtih the format and style of a task (or project) retrospective."
+  },
+  {
+   "slug": "tech-planning-doc",
+   "name": "Tech planning doc",
+   "category": "planning-and-tasks",
+   "output": "markdown",
+   "path": "planning-and-tasks/tech-planning-doc.md",
+   "summary": "Take the text provided by the user and reformat it into a custom prompt to be used by an AI writing assistant for the purpose of transforming text from a raw transcription into a formatted version intended for a..."
+  },
+  {
+   "slug": "timesheet-generation",
+   "name": "Timesheet Generation",
+   "category": "planning-and-tasks",
+   "output": "markdown",
+   "path": "planning-and-tasks/timesheet-generation.md",
+   "summary": "Your task is to take the text provided by the user describing their activities and time entries, and convert it into a structured timesheet."
+  },
+  {
+   "slug": "to-do-list-unstructured",
+   "name": "To Do List (Unstructured)",
+   "category": "planning-and-tasks",
+   "output": "markdown",
+   "path": "planning-and-tasks/to-do-list-unstructured.md",
+   "summary": "Take the user's note and generate a task list based on its contents."
+  },
+  {
+   "slug": "todo-list-document-organise-unstructured",
+   "name": "Todo List - Document & Organise (Unstructured)",
+   "category": "planning-and-tasks",
+   "output": "markdown",
+   "path": "planning-and-tasks/todo-list-document-organise-unstructured.md",
+   "summary": "Take the user's note and convert it into a well-organized to-do list."
+  },
+  {
+   "slug": "week-planner",
+   "name": "Week Planner",
+   "category": "planning-and-tasks",
+   "output": "markdown",
+   "path": "planning-and-tasks/week-planner.md",
+   "summary": "Take the text provided by the user and edit it into a weekly planner."
+  },
+  {
+   "slug": "blog-outline",
+   "name": "Blog outline",
+   "category": "publishing-and-social",
+   "output": "markdown",
+   "path": "publishing-and-social/blog-outline.md",
+   "summary": "Reformat the following text into a blog outline."
+  },
+  {
+   "slug": "classified-listing",
+   "name": "Classified Listing",
+   "category": "publishing-and-social",
+   "output": "markdown",
+   "path": "publishing-and-social/classified-listing.md",
+   "summary": "Transform the text into a structured classified advertisement."
+  },
+  {
+   "slug": "event-description-creator",
+   "name": "Event Description Creator",
+   "category": "publishing-and-social",
+   "output": "markdown",
+   "path": "publishing-and-social/event-description-creator.md",
+   "summary": "Take the text provided by the user and reformat it as the description for an event listing."
+  },
+  {
+   "slug": "formal-facebook-responses",
+   "name": "Formal Facebook Responses",
+   "category": "publishing-and-social",
+   "output": "markdown",
+   "path": "publishing-and-social/formal-facebook-responses.md",
+   "summary": "Your task is to take the user-provided dictated instruction responding to a Facebook post or comment and draft a response that is highly formal and verbose, resembling a letter rather than a typical social media..."
+  },
+  {
+   "slug": "linkedin-post",
+   "name": "LinkedIn post",
+   "category": "publishing-and-social",
+   "output": "markdown",
+   "path": "publishing-and-social/linkedin-post.md",
+   "summary": "Your task is to take the text provided by the user and edit it lightly to make it suitable for posting on LinkedIn."
+  },
+  {
+   "slug": "long-social-media-post",
+   "name": "Long Social Media Post",
+   "category": "publishing-and-social",
+   "output": "markdown",
+   "path": "publishing-and-social/long-social-media-post.md",
+   "summary": "Transform the text into a longer social media post suitable for platforms like Facebook, LinkedIn, or Instagram."
+  },
+  {
+   "slug": "marketing-collateral",
+   "name": "Marketing Collateral",
+   "category": "publishing-and-social",
+   "output": "markdown",
+   "path": "publishing-and-social/marketing-collateral.md",
+   "summary": "Take the text provided by the user and return it in the form of a finished piece of marketing collateral."
+  },
+  {
+   "slug": "newsletter",
+   "name": "Newsletter",
+   "category": "publishing-and-social",
+   "output": "markdown",
+   "path": "publishing-and-social/newsletter.md",
+   "summary": "Reformat the following text into a newsletter update."
+  },
+  {
+   "slug": "online-review-generator",
+   "name": "Online Review Generator",
+   "category": "publishing-and-social",
+   "output": "markdown",
+   "path": "publishing-and-social/online-review-generator.md",
+   "summary": "Your task is to take the text provided by the user, which includes the name of the service and their thoughts on it, and reformat it into a structured, readable online review."
+  },
+  {
+   "slug": "op-ed-writer",
+   "name": "Op-Ed Writer",
+   "category": "publishing-and-social",
+   "output": "markdown",
+   "path": "publishing-and-social/op-ed-writer.md",
+   "summary": "Take the text provided by the user and rewrite it according to the following instructions: - The user's text should be reformatted in the style of an 'op ed' (written opinion piece)."
+  },
+  {
+   "slug": "plot-writer",
+   "name": "Plot Writer",
+   "category": "publishing-and-social",
+   "output": "markdown",
+   "path": "publishing-and-social/plot-writer.md",
+   "summary": "Take the text provided by the user and reformat it as a plot description for a work of fiction."
+  },
+  {
+   "slug": "product-description",
+   "name": "Product Description",
+   "category": "publishing-and-social",
+   "output": "markdown",
+   "path": "publishing-and-social/product-description.md",
+   "summary": "Reformat the following text into a product description."
+  },
+  {
+   "slug": "screenplay-generator",
+   "name": "Screenplay Generator",
+   "category": "publishing-and-social",
+   "output": "markdown",
+   "path": "publishing-and-social/screenplay-generator.md",
+   "summary": "Take the text provided by the user and reformat it into its most logical representation as a screenplay."
+  },
+  {
+   "slug": "social-media-reply",
+   "name": "Social Media Reply",
+   "category": "publishing-and-social",
+   "output": "markdown",
+   "path": "publishing-and-social/social-media-reply.md",
+   "summary": "The text provided by the user is intended as a social media reply (to a Facebook post, article, comment, or thread)."
+  },
+  {
+   "slug": "speechwriter-on-demand",
+   "name": "Speechwriter On Demand",
+   "category": "publishing-and-social",
+   "output": "markdown",
+   "path": "publishing-and-social/speechwriter-on-demand.md",
+   "summary": "Take the text provided by the user and edit it to accord with the formatting of a written speech."
+  },
+  {
+   "slug": "teleprompter-text",
+   "name": "Teleprompter Text",
+   "category": "publishing-and-social",
+   "output": "markdown",
+   "path": "publishing-and-social/teleprompter-text.md",
+   "summary": "Take the text provided by the user and reformat it as text that is suitable to be used in a teleprompter."
+  },
+  {
+   "slug": "testimonial-formatter",
+   "name": "Testimonial Formatter",
+   "category": "publishing-and-social",
+   "output": "markdown",
+   "path": "publishing-and-social/testimonial-formatter.md",
+   "summary": "Take the text provided by the user and reformat it as a testimonial written from the user’s perspective."
+  },
+  {
+   "slug": "tweet",
+   "name": "Tweet",
+   "category": "publishing-and-social",
+   "output": "markdown",
+   "path": "publishing-and-social/tweet.md",
+   "summary": "Your task is to take the text provided by the user and rewrite it as a single tweet, staying under the current character limit for standard Twitter accounts (280 characters)."
+  },
+  {
+   "slug": "website-page",
+   "name": "Website page",
+   "category": "publishing-and-social",
+   "output": "markdown",
+   "path": "publishing-and-social/website-page.md",
+   "summary": "Reformat the following text into copy for a general website page."
+  },
+  {
+   "slug": "youtube-video-description",
+   "name": "YouTube Video Description",
+   "category": "publishing-and-social",
+   "output": "markdown",
+   "path": "publishing-and-social/youtube-video-description.md",
+   "summary": "Take the text provided by the user and reformat it to conform with the typical tone of voice and structure of a YouTube video description."
+  },
+  {
+   "slug": "calendar-entries-json",
+   "name": "Calendar Entries (JSON)",
+   "category": "structured-data",
+   "output": "json",
+   "path": "structured-data/calendar-entries-json.md",
+   "summary": "Take the user's dictated calendar entry or entries and return a structured JSON array representing calendar events."
+  },
+  {
+   "slug": "contact-creation-json",
+   "name": "Contact Creation (JSON)",
+   "category": "structured-data",
+   "output": "json",
+   "path": "structured-data/contact-creation-json.md",
+   "summary": "Take the user's provided contact information and return a structured JSON object suitable for use in a contact management system such as Google Contacts."
+  },
+  {
+   "slug": "document-generator-json",
+   "name": "Document Generator (JSON)",
+   "category": "structured-data",
+   "output": "json",
+   "path": "structured-data/document-generator-json.md",
+   "summary": "Take the text provided by the user and reformat it into a well-structured Markdown document, using appropriate internal headings to organize the content."
+  },
+  {
+   "slug": "format-as-csv",
+   "name": "Format As CSV",
+   "category": "structured-data",
+   "output": "csv",
+   "path": "structured-data/format-as-csv.md",
+   "summary": "Take the text provided by the user."
+  },
+  {
+   "slug": "format-as-log",
+   "name": "Format As Log",
+   "category": "structured-data",
+   "output": "markdown",
+   "path": "structured-data/format-as-log.md",
+   "summary": "Transform the input text into a precise log format with timestamps for each entry."
+  },
+  {
+   "slug": "format-as-yaml",
+   "name": "Format As YAML",
+   "category": "structured-data",
+   "output": "yaml",
+   "path": "structured-data/format-as-yaml.md",
+   "summary": "Take the text provided by the user."
+  },
+  {
+   "slug": "format-to-shell-commands",
+   "name": "Format To Shell Commands",
+   "category": "structured-data",
+   "output": "shell",
+   "path": "structured-data/format-to-shell-commands.md",
+   "summary": "Convert natural language instructions into the most appropriate shell commands (bash/zsh)."
+  },
+  {
+   "slug": "html-email-template",
+   "name": "HTML Email Template",
+   "category": "structured-data",
+   "output": "html",
+   "path": "structured-data/html-email-template.md",
+   "summary": "Take the user's text describing the desired structure or content of an email template and return only a complete, Gmail-compliant HTML email template."
+  },
+  {
+   "slug": "json-element",
+   "name": "JSON Element",
+   "category": "structured-data",
+   "output": "json",
+   "path": "structured-data/json-element.md",
+   "summary": "Take the text provided by the user."
+  },
+  {
+   "slug": "log-format",
+   "name": "Log format",
+   "category": "structured-data",
+   "output": "markdown",
+   "path": "structured-data/log-format.md",
+   "summary": "Reformat the following text into a basic log format."
+  },
+  {
+   "slug": "render-as-icalendar-ics",
+   "name": "Render As ICalendar (.ics)",
+   "category": "structured-data",
+   "output": "ics",
+   "path": "structured-data/render-as-icalendar-ics.md",
+   "summary": "Take the text provided by the user and generate a valid iCalendar (.ics) VEVENT entry."
+  },
+  {
+   "slug": "render-as-openapi-compatible-json",
+   "name": "Render As OpenAPI-compatible JSON",
+   "category": "structured-data",
+   "output": "json",
+   "path": "structured-data/render-as-openapi-compatible-json.md",
+   "summary": "Take the text provided by the user and infer the appropriate JSON Schema that could validate an equivalent structured payload."
+  },
+  {
+   "slug": "render-as-toml",
+   "name": "Render As TOML",
+   "category": "structured-data",
+   "output": "toml",
+   "path": "structured-data/render-as-toml.md",
+   "summary": "Take the text provided by the user and express it as a TOML config block."
+  },
+  {
+   "slug": "sql-expression",
+   "name": "SQL Expression",
+   "category": "structured-data",
+   "output": "sql",
+   "path": "structured-data/sql-expression.md",
+   "summary": "Take the text provided by the user."
+  },
+  {
+   "slug": "text-to-html",
+   "name": "Text To HTML",
+   "category": "structured-data",
+   "output": "html",
+   "path": "structured-data/text-to-html.md",
+   "summary": "Your task is to take the provided text and lightly edit it for clarity and flow while preserving the original intent and tone."
+  },
+  {
+   "slug": "to-do-list-formatter-json",
+   "name": "To Do List Formatter (JSON)",
+   "category": "structured-data",
+   "output": "json",
+   "path": "structured-data/to-do-list-formatter-json.md",
+   "summary": "Take the user's dictated to-do list and return a structured JSON array representing the tasks."
+  },
+  {
+   "slug": "to-do-list-formatter-json-semi-autonomous",
+   "name": "To Do List Formatter (JSON, Semi-Autonomous)",
+   "category": "structured-data",
+   "output": "json",
+   "path": "structured-data/to-do-list-formatter-json-semi-autonomous.md",
+   "summary": "Take the user's dictated to-do list and return a structured JSON array representing the tasks."
+  },
+  {
+   "slug": "assertive-text",
+   "name": "Assertive Text",
+   "category": "tone-and-style",
+   "output": "markdown",
+   "path": "tone-and-style/assertive-text.md",
+   "summary": "You are a professional writing assistant."
+  },
+  {
+   "slug": "business-tone-general",
+   "name": "Business Tone (General)",
+   "category": "tone-and-style",
+   "output": "markdown",
+   "path": "tone-and-style/business-tone-general.md",
+   "summary": "Transform the text to use a professional, business-appropriate tone."
+  },
+  {
+   "slug": "de-imposter-syndrome",
+   "name": "De-Imposter Syndrome",
+   "category": "tone-and-style",
+   "output": "markdown",
+   "path": "tone-and-style/de-imposter-syndrome.md",
+   "summary": "Take the text provided by the user and edit it with the following context in mind: the user suffers from 'imposter syndrome' and tends to downplay or understate their capabilities, knowledge, and achievements."
+  },
+  {
+   "slug": "emotionally-sensitive",
+   "name": "Emotionally Sensitive",
+   "category": "tone-and-style",
+   "output": "markdown",
+   "path": "tone-and-style/emotionally-sensitive.md",
+   "summary": "Adjust the tone of the input text to be more emotionally aware and sensitive while maintaining professionalism."
+  },
+  {
+   "slug": "firm-but-polite-boundary-setting",
+   "name": "Firm But Polite (Boundary Setting)",
+   "category": "tone-and-style",
+   "output": "markdown",
+   "path": "tone-and-style/firm-but-polite-boundary-setting.md",
+   "summary": "Take the text provided by the user."
+  },
+  {
+   "slug": "formal-tone-general",
+   "name": "Formal Tone (General)",
+   "category": "tone-and-style",
+   "output": "markdown",
+   "path": "tone-and-style/formal-tone-general.md",
+   "summary": "Transform the text to use a highly formal tone suitable for official communications."
+  },
+  {
+   "slug": "great-news",
+   "name": "Great News!",
+   "category": "tone-and-style",
+   "output": "markdown",
+   "path": "tone-and-style/great-news.md",
+   "summary": "Take the text provided by the user, assuming the context that it is intended as the draft of a professional email."
+  },
+  {
+   "slug": "impress-the-boss",
+   "name": "Impress The Boss",
+   "category": "tone-and-style",
+   "output": "markdown",
+   "path": "tone-and-style/impress-the-boss.md",
+   "summary": "Take the text provided by the user and edit it with the following task and context in mind: the text is an email or message from the user to a boss or colleagues."
+  },
+  {
+   "slug": "journalistic-style",
+   "name": "Journalistic Style",
+   "category": "tone-and-style",
+   "output": "markdown",
+   "path": "tone-and-style/journalistic-style.md",
+   "summary": "Transform the text into a journalistic article format with the following elements: - A clear, attention-grabbing headline - A concise lead paragraph summarizing the key information (who, what, when, where, why, how)..."
+  },
+  {
+   "slug": "literary-and-formal",
+   "name": "Literary And Formal",
+   "category": "tone-and-style",
+   "output": "markdown",
+   "path": "tone-and-style/literary-and-formal.md",
+   "summary": "Take the text provided by the user and edit it according to the following instructions: preface the user's text with the city they are writing from and today's date."
+  },
+  {
+   "slug": "maximise-formality",
+   "name": "Maximise Formality",
+   "category": "tone-and-style",
+   "output": "markdown",
+   "path": "tone-and-style/maximise-formality.md",
+   "summary": "Your task is to take the user’s text and transform it into an exceptionally formal correspondence."
+  }
+ ]
+}

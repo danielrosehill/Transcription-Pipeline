@@ -13,6 +13,7 @@ superseded by it and marked so in its own README.
 | `danielrosehill/Long-Form-Audio-Pipeline` | scripts | reference | speech EQ chain idea, compression data point (47 min WAV 483 MB -> 17 MB Opus) | unvalidated EQ values |
 | `danielrosehill/audacity-transcription-presets` | presets/docs | reference | container trap (OpenAI's API rejects .ogg/.opus/.flac), "do not re-encode lossy to lower lossy" | Audacity-specific macros |
 | `danielrosehill/Diarised-Transcript-Assistant` | prompt | reference | naming speakers from voice descriptions plus content | the single-pass audio-in format (diarization now comes from AssemblyAI labels + `label-speakers`) |
+| HF `danielrosehill/Text-Transformation-Prompts-300525` | prompt dataset, 206 prompts | frozen; vendored | all 206 prompts, unchanged text, as `templates/library/` with categories and an index | the HF dependency; the per-prompt JSON duplicates |
 | `danielrosehill/Audio-Multimodal-Formatting-Prompts` | prompt library | reference | none directly; a seed corpus for user templates | generated prompts of uneven quality |
 
 ## Why no MCP servers

@@ -35,19 +35,30 @@ for PDFs and `yt-dlp` for video URLs.
 | Stage | Skill | What it does |
 |---|---|---|
 | | `run-pipeline` | Entry point. Runs the stages below with sensible defaults or one of your named recipes. |
+| | `batch-pipeline` | Several recordings at once: settles the settings once, then runs one worker (subagent) per file, or per batch of about 4 when there are many, and reports one table. |
 | | `setup` | Writes your preferences file: sources, keys, model slots, servers, EQ, save targets. |
 | 1 | `retrieve-audio` | Fetches the newest recording from local folders, Google Drive, S3/MinIO/Wasabi/R2 or a URL. Stages the file when your tools run on another machine. |
 | 2 | `preprocess-audio` | Optional denoise (FFT or DeepFilterNet), EQ presets, 6 s+ silence trimming, and mono 16 kHz in MP3 or Opus. |
 | 3 | `transcribe-audio` | Sends the audio to OpenRouter, AssemblyAI, Gemini or a local OpenAI-compatible server, and saves the output untouched. |
 | 4 | `clean-transcript` | Light cleanup (disfluencies, self-corrections, paragraphs) or heavy (adds headings and de-duplication, and fixes ASR errors with inline markers). |
 | 4 | `label-speakers` | Turns Speaker A/B into real names, worked out from content, from voice descriptions, or from clips you listen to. |
-| 4 | `reshape-transcript` | Rewrites the transcript as a dev spec, notes, summary, minutes, to-do list, email, blog outline or post, or a template of your own. |
+| 4 | `reshape-transcript` | Rewrites the transcript as a dev spec, notes, summary, minutes, to-do list, email, blog outline or post, one of the 206 prompts in the bundled library, or a template of your own. |
 | 5 | `format-document` | Typst PDF: either a clean document or a conversation layout with speech bubbles. |
 | 6 | `save-outputs` | Saves to the repo, a folder, Drive or a bucket. Includes the recording only if you ask, and can add an "Original idea recording" README link. |
 
 Every run keeps all its artefacts: `<stem>.raw.txt` and `.raw.srt` from the ASR, `.clean.md`, and `.<template>.md`
 for each reshape, `.pdf`, and `.meta.json` (the model actually used, the time taken and the cost). Nothing is ever
 overwritten.
+
+## Text transformation library
+
+`templates/library/` holds 206 system prompts for turning dictated text into something else, in 14 categories:
+emails and correspondence, meetings, planning and tasks, documentation, career, business documents, structured
+data (JSON, CSV, YAML, TOML, `.ics`, SQL), tone and style, language (including Hebrew), publishing and social,
+AI prompts, personal journals, cleanup, and novelty styles. Agents search `index.json` and load one prompt at a
+time. You can also pass your own prompt. The prompts come from the
+[Text-Transformation-Prompts](https://huggingface.co/datasets/danielrosehill/Text-Transformation-Prompts-300525)
+dataset; this copy is now the maintained one (see [its README](templates/library/README.md)).
 
 ## Your preferences stay out of the plugin
 
