@@ -1,0 +1,10 @@
+{
+  "_about": "Phone-mic voice notes: phone mics are bright and boxy around 500 Hz. Starting point taken from a voice-fitted phone preset (Podcast-Light-Edit-Chain, 2026-10-30).",
+  "highpass_hz": 80,
+  "eq": [
+    {"f": 500, "width_octaves": 1.0, "gain_db": -3.0},
+    {"f": 2000, "width_octaves": 1.0, "gain_db": -1.5}
+  ],
+  "compressor": {"threshold_db": -20, "ratio": 2.5, "attack_ms": 15, "release_ms": 200, "makeup_db": 2},
+  "deess": 0.3
+}

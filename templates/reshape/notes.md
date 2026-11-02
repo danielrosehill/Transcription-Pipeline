@@ -1,0 +1,1 @@
+Turn the transcript below into concise notes: a one-line summary, then grouped bullet points of the substantive points, decisions and facts. Keep names, numbers and dates exact. End with an "Actions" list if any actions were mentioned (who, what, when if stated). Output Markdown only.

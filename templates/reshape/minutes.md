@@ -1,0 +1,1 @@
+The transcript below is a meeting or call. Write minutes: title, date and participants if stated, then "Discussion" (short bullets per topic), "Decisions", and "Actions" (owner, task, due date if stated). Keep it to what a participant would want on one page. Attribute statements only where the transcript makes the speaker clear. Output Markdown only.

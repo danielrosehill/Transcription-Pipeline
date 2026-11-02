@@ -1,0 +1,1288 @@
+1
+00:00:01,040 --> 00:00:05,360
+Okay, the purpose of this voice note is to just
+
+2
+00:00:05,520 --> 00:00:09,320
+create a plugin for Claude
+
+3
+00:00:09,820 --> 00:00:12,400
+code that's going to. I want to wrap together,
+
+4
+00:00:13,920 --> 00:00:17,640
+bring together a lot of disparate pieces of this plumbing that I've
+
+5
+00:00:18,140 --> 00:00:21,560
+kind of created. And I feel like I have a good idea
+
+6
+00:00:22,060 --> 00:00:25,360
+now for how everything should just be simplified into one plugin
+
+7
+00:00:26,490 --> 00:00:29,930
+for transcription work that will be like
+
+8
+00:00:30,430 --> 00:00:34,130
+properly divided into, into different sections according to this very
+
+9
+00:00:34,630 --> 00:00:37,690
+specific pattern that I follow all the time.
+
+10
+00:00:38,810 --> 00:00:42,330
+And doing that like end to end. That's basically the purpose of
+
+11
+00:00:42,830 --> 00:00:46,050
+this plugin. What I've done is kind of created
+
+12
+00:00:46,550 --> 00:00:50,490
+plugins for Claude code that did one specific thing like using Gemini
+
+13
+00:00:51,220 --> 00:00:54,740
+and via the Gemini API for this and then created one for
+
+14
+00:00:55,240 --> 00:00:58,740
+local on device transcription and
+
+15
+00:01:00,340 --> 00:01:03,500
+what I would like to do and I created I think MCPS for those as
+
+16
+00:01:04,000 --> 00:01:08,340
+well. And I feel like the MCP aspect
+
+17
+00:01:08,840 --> 00:01:12,620
+is actually not really needed or over time as plugins
+
+18
+00:01:13,120 --> 00:01:17,510
+have matured and that my usage has changed. I felt that we
+
+19
+00:01:18,010 --> 00:01:21,430
+actually don't even need MCPS for defining these tasks.
+
+20
+00:01:21,930 --> 00:01:26,070
+Like it's just easier to ship a plugin with,
+
+21
+00:01:26,570 --> 00:01:30,070
+you know, environment variables and just tell the agent to use the
+
+22
+00:01:30,570 --> 00:01:33,950
+API so the ground to be replaced.
+
+23
+00:01:34,450 --> 00:01:37,070
+And I, by replaced I don't mean just, I don't mean. What I mean is
+
+24
+00:01:37,570 --> 00:01:42,110
+that like the previous one, Gemini MCP just
+
+25
+00:01:42,610 --> 00:01:46,070
+will shift to like no longer maintained. Maybe we can update the repo just to
+
+26
+00:01:46,570 --> 00:01:49,990
+say that, end of life, whatever. And this is intended from
+
+27
+00:01:50,470 --> 00:01:53,110
+my perspective as like the successor to us.
+
+28
+00:01:53,830 --> 00:01:57,750
+So the way I'd like to structure the plugin is
+
+29
+00:01:58,250 --> 00:02:00,950
+to look at transcription in a few different discrete stages.
+
+30
+00:02:03,510 --> 00:02:07,150
+The first one is collection. So the
+
+31
+00:02:07,650 --> 00:02:10,360
+process I'm doing at the moment is I'm recording a note on my phone,
+
+32
+00:02:10,860 --> 00:02:14,280
+I'm recording it on ASR, my favorite app
+
+33
+00:02:14,440 --> 00:02:17,880
+for this stuff. And once I'm done,
+
+34
+00:02:18,120 --> 00:02:21,720
+and this is really the process I use for long form transcription,
+
+35
+00:02:21,880 --> 00:02:25,720
+I'll upload it to a specific Google Drive bucket or folder. I mean,
+
+36
+00:02:25,960 --> 00:02:30,040
+and I have a couple of folders
+
+37
+00:02:30,440 --> 00:02:33,720
+predefined. One says like development plans, one says
+
+38
+00:02:34,220 --> 00:02:37,970
+audio context one, you know,
+
+39
+00:02:38,050 --> 00:02:41,690
+and the first skill that I like to do,
+
+40
+00:02:42,190 --> 00:02:46,370
+so my modus operandi is I try to ship these as public plugins and
+
+41
+00:02:46,930 --> 00:02:50,530
+allow within that framework ability for the user
+
+42
+00:02:51,030 --> 00:02:54,530
+to adapt it. Because what I used to do was create like parallel
+
+43
+00:02:55,030 --> 00:02:59,170
+private plugins with my own things baked in. And it's really easier for me
+
+44
+00:02:59,670 --> 00:03:03,200
+to have a public plugin even for my own use, so long as
+
+45
+00:03:03,700 --> 00:03:07,120
+I can just like adapt it. The usual process for adaptation that
+
+46
+00:03:07,620 --> 00:03:11,440
+I found with Claude code. And it's imperfect because to the best of my knowledge
+
+47
+00:03:11,940 --> 00:03:15,480
+at the time I'm recording this, there isn't yet like one single
+
+48
+00:03:16,120 --> 00:03:18,360
+blueprint for this is how you're supposed to do it.
+
+49
+00:03:19,240 --> 00:03:23,480
+But it's usually something like save the user's preferences in this
+
+50
+00:03:23,980 --> 00:03:28,000
+file that's on their local machine so that the plugin has
+
+51
+00:03:28,500 --> 00:03:31,830
+persistent memory aside from its built in memory.
+
+52
+00:03:32,330 --> 00:03:35,110
+And the reason that I do it like that is because I'm always trying to
+
+53
+00:03:35,610 --> 00:03:38,590
+make these framework agnostic. So if you use Claude code,
+
+54
+00:03:39,150 --> 00:03:42,430
+if Claude uses its internal memory to save these
+
+55
+00:03:42,930 --> 00:03:46,110
+presets, then that plugin is not going to be of use to you in codecs
+
+56
+00:03:46,610 --> 00:03:49,990
+because it's going to have a hard time accessing Claude's proprietary internal memory.
+
+57
+00:03:50,490 --> 00:03:53,630
+So the reason I do it like this is that I want to say,
+
+58
+00:03:54,130 --> 00:03:57,960
+okay, put it here, the file system and
+
+59
+00:03:58,460 --> 00:04:01,720
+to connect it to the example I just gave. What I'd like to do is
+
+60
+00:04:02,220 --> 00:04:05,800
+have an onboarding skill where you define your copy and paste
+
+61
+00:04:06,300 --> 00:04:10,280
+your folder IDs. And what I would usually do, the process
+
+62
+00:04:10,780 --> 00:04:13,800
+I'm envisioning here is I probably open a text pad,
+
+63
+00:04:15,000 --> 00:04:18,440
+copy and paste a Google Drive link saying this is where I saved my
+
+64
+00:04:18,940 --> 00:04:22,510
+development plan voice notes. This is where I save my general voice
+
+65
+00:04:23,010 --> 00:04:26,110
+notes. This is like a kind of a first entry thing.
+
+66
+00:04:26,750 --> 00:04:30,350
+And the skill for this one, which is the retrieval phase of the, of the,
+
+67
+00:04:30,850 --> 00:04:34,550
+of the transcription pipeline would be we
+
+68
+00:04:35,050 --> 00:04:38,670
+could have retrieve. I guess the hierarchy I'd see is this
+
+69
+00:04:38,750 --> 00:04:42,390
+retrieve as the skill and then subskills
+
+70
+00:04:42,890 --> 00:04:46,750
+for Google Drive Wasabi S3
+
+71
+00:04:48,230 --> 00:04:52,030
+which could be tailored to simply just retrieve Using this
+
+72
+00:04:52,530 --> 00:04:57,190
+tool and assuming the availability of Google Drive as something
+
+73
+00:04:57,690 --> 00:05:01,510
+that's available. Which is where I'm moving away from the MCP
+
+74
+00:05:02,010 --> 00:05:05,910
+approach. Just saying like assume in this environment it's
+
+75
+00:05:06,410 --> 00:05:09,430
+already set up. So that is what I would do for that.
+
+76
+00:05:11,590 --> 00:05:15,200
+And then the question becomes, I guess, like this
+
+77
+00:05:15,700 --> 00:05:19,120
+is really an open question and not just for this project, but when I
+
+78
+00:05:19,620 --> 00:05:22,960
+talk about wanting to ship public plugins that the
+
+79
+00:05:23,460 --> 00:05:26,280
+user can then modify. My instinct here might be to say,
+
+80
+00:05:26,920 --> 00:05:29,480
+you know, have written into the plugin skills,
+
+81
+00:05:29,720 --> 00:05:33,160
+depending on what type of Google Drive connection the user has,
+
+82
+00:05:34,040 --> 00:05:37,520
+rewrite the skills we shipped with to
+
+83
+00:05:38,020 --> 00:05:41,450
+reflect the user's environment. And that's where you run into trouble
+
+84
+00:05:41,950 --> 00:05:45,250
+because then the user is going to be if the agent does that
+
+85
+00:05:45,750 --> 00:05:48,850
+and faithfully rewrites the skills, the user is going to end up
+
+86
+00:05:49,350 --> 00:05:53,290
+now with their own fork of the plugin and
+
+87
+00:05:53,790 --> 00:05:57,290
+If I were to ship an update, there's going to be a conflict. So I
+
+88
+00:05:57,790 --> 00:06:01,450
+don't know what the intended resolution to that is, which is why for the moment,
+
+89
+00:06:01,950 --> 00:06:05,330
+I tend to use the approach of saying, have like a little scratch
+
+90
+00:06:05,830 --> 00:06:08,980
+pad memory on the user's file system and make all the notes and there.
+
+91
+00:06:09,480 --> 00:06:12,740
+So that's what we can do for this one. So the first
+
+92
+00:06:13,240 --> 00:06:16,100
+one is retrieval, and retrieval should also cover local files.
+
+93
+00:06:16,260 --> 00:06:19,660
+So if I record using Audacity on the computer and
+
+94
+00:06:20,160 --> 00:06:23,460
+I pop it into a folder on my local file system called Voice Notes,
+
+95
+00:06:24,020 --> 00:06:25,780
+we can have a local retrieval skill.
+
+96
+00:06:28,660 --> 00:06:32,380
+One other, and this is this, this is really me in this voice note,
+
+97
+00:06:32,880 --> 00:06:33,620
+trying to like iron out,
+
+98
+00:06:36,190 --> 00:06:39,830
+incorporate all the little edge cases I've tackled with these
+
+99
+00:06:40,330 --> 00:06:44,110
+different projects. One of the, one of the first ones that I came across
+
+100
+00:06:44,610 --> 00:06:48,390
+was I'm trying to. I have MCP gateway,
+
+101
+00:06:48,890 --> 00:06:52,390
+an AI gateway on my home server. And the pattern I've been trying
+
+102
+00:06:52,890 --> 00:06:56,670
+to use for the past year or so is to have one single
+
+103
+00:06:57,170 --> 00:07:00,600
+connection from an AI agent to the
+
+104
+00:07:00,680 --> 00:07:04,120
+server. And the server maintains all the CLIs,
+
+105
+00:07:04,680 --> 00:07:08,200
+all the connections, all the tools, so that I can use it from
+
+106
+00:07:08,700 --> 00:07:13,160
+any client. And when I began migrating local
+
+107
+00:07:13,660 --> 00:07:17,360
+MCPs, including my own ones, over to this model,
+
+108
+00:07:17,860 --> 00:07:21,400
+the server, bundling mcps and later bundling plugins and skills,
+
+109
+00:07:21,880 --> 00:07:26,290
+one of the first points of friction I encountered was that any
+
+110
+00:07:26,790 --> 00:07:30,770
+MCP or any tool that required a binary now
+
+111
+00:07:31,270 --> 00:07:36,050
+was on a different file system. So transcription
+
+112
+00:07:36,550 --> 00:07:42,130
+was actually one of the first road bumps here because I could record 45
+
+113
+00:07:42,630 --> 00:07:45,090
+minutes on audacity, save it locally.
+
+114
+00:07:45,890 --> 00:07:49,010
+I put my transcription skill or plugin on the server.
+
+115
+00:07:49,650 --> 00:07:52,210
+It connects to it, Claude connects to it, reads it,
+
+116
+00:07:52,880 --> 00:07:56,240
+but then it says, wait a second, I can't. This isn't going to work because
+
+117
+00:07:56,740 --> 00:08:00,640
+I need to get the audio file from your computer onto the server
+
+118
+00:08:01,520 --> 00:08:03,440
+so that I can then push it up to Google.
+
+119
+00:08:04,720 --> 00:08:07,920
+And the workaround
+
+120
+00:08:08,420 --> 00:08:10,960
+that I developed for this was to install minio,
+
+121
+00:08:11,600 --> 00:08:14,880
+as in the S3 bucket, on the server
+
+122
+00:08:15,120 --> 00:08:19,590
+and to create a bucket with a expiry policy called file
+
+123
+00:08:20,090 --> 00:08:23,790
+Staging. And that should be in my environment, but it's a very me environment
+
+124
+00:08:24,590 --> 00:08:28,110
+thing. So we come back to
+
+125
+00:08:28,610 --> 00:08:32,510
+the customization challenge here, but to put it aside
+
+126
+00:08:33,010 --> 00:08:37,950
+for a second, and this is jumping actually to the upload
+
+127
+00:08:38,450 --> 00:08:40,910
+stage of the plugin, but it's.
+
+128
+00:08:41,470 --> 00:08:44,799
+If we take local. Let's say I'm using gemini API
+
+129
+00:08:45,299 --> 00:08:48,839
+or OpenRouter or whatever. The skill
+
+130
+00:08:49,339 --> 00:08:52,839
+for me would be take the MP3. Sorry,
+
+131
+00:08:53,339 --> 00:08:57,399
+the skill for me would be if it's on my local machine. Take the MP3,
+
+132
+00:08:58,279 --> 00:09:00,679
+transfer it to the staging bucket,
+
+133
+00:09:01,399 --> 00:09:05,559
+then invoke the OpenRider transcription skill
+
+134
+00:09:07,319 --> 00:09:10,679
+and that's the workaround. Now the binary is on the machine, it just has to
+
+135
+00:09:11,179 --> 00:09:14,620
+go up base 64. I should add just to be very comprehensive about
+
+136
+00:09:15,180 --> 00:09:18,700
+all the road bumps I've described here. I found
+
+137
+00:09:19,200 --> 00:09:21,900
+that for long transcriptions didn't work so well.
+
+138
+00:09:22,620 --> 00:09:26,140
+So I think the transfer process makes the most sense. Worst case scenario,
+
+139
+00:09:26,640 --> 00:09:30,260
+this can be I can have my private transcription plugin
+
+140
+00:09:30,760 --> 00:09:35,620
+defining my own practices and just release this as the public one with more
+
+141
+00:09:36,120 --> 00:09:39,740
+of a blank slate that the user can modify. So we looked at collection
+
+142
+00:09:40,240 --> 00:09:43,580
+as the first stage which is gathering the file. The second
+
+143
+00:09:44,080 --> 00:09:47,620
+stage is transcription and this is setting it up
+
+144
+00:09:48,120 --> 00:09:51,980
+for transcription. Now here's where I also created multiple different plugins
+
+145
+00:09:52,480 --> 00:09:56,140
+that I think should be consolidated or the intention
+
+146
+00:09:56,640 --> 00:10:00,380
+of this one is to consolidate. So the first one was
+
+147
+00:10:01,100 --> 00:10:04,390
+well, there's a few ones that I use and I think these are just
+
+148
+00:10:04,890 --> 00:10:08,630
+better kept as different skills assembly AI is my traditional choice
+
+149
+00:10:09,130 --> 00:10:12,710
+for long form transcription timestamp
+
+150
+00:10:12,870 --> 00:10:16,790
+built for this lovely, affordable.
+
+151
+00:10:17,110 --> 00:10:20,910
+So that's a great option to keep the
+
+152
+00:10:21,410 --> 00:10:24,870
+next one for more day to day stuff is OpenRouter. They now support multiple
+
+153
+00:10:25,270 --> 00:10:27,270
+different voice endpoints.
+
+154
+00:10:28,070 --> 00:10:31,930
+And what I like to do is as
+
+155
+00:10:32,430 --> 00:10:35,770
+the default use Gemini Flash Latest.
+
+156
+00:10:36,410 --> 00:10:39,850
+And the reason that I do that is because that's a dynamic endpoint.
+
+157
+00:10:40,170 --> 00:10:43,770
+And I'm just saying this sort of for documentation of this, of all these,
+
+158
+00:10:44,270 --> 00:10:47,970
+of this plugin, it's dynamic so as they release new Gemini Flashes you
+
+159
+00:10:48,470 --> 00:10:52,890
+don't need to keep updating it. Flash is cheap and it's
+
+160
+00:10:53,390 --> 00:10:56,860
+more than good enough for basic transcription. And what
+
+161
+00:10:57,360 --> 00:11:02,020
+I typically do is have a basic system prompt along the lines of you
+
+162
+00:11:02,520 --> 00:11:06,660
+are receiving audio, return the audio,
+
+163
+00:11:06,820 --> 00:11:10,860
+you know the full a full transcript without
+
+164
+00:11:11,360 --> 00:11:14,340
+disfluencies. So there is a tiny bit of a cleanup prompt there.
+
+165
+00:11:15,140 --> 00:11:19,340
+But I have a list of like four or five different open router models
+
+166
+00:11:19,840 --> 00:11:23,620
+that I could periodically update. And I think that this is definitely
+
+167
+00:11:25,940 --> 00:11:30,060
+something that could be divorced from the public plugin because we
+
+168
+00:11:30,560 --> 00:11:34,380
+can in the scratch pad, the user memory for this plugin we can define open
+
+169
+00:11:34,880 --> 00:11:39,340
+router 1 open router 2 open router 3 open etc.
+
+170
+00:11:39,840 --> 00:11:43,700
+With maybe a little annotation. So or one being
+
+171
+00:11:44,200 --> 00:11:48,380
+the actual endpoint and or one notes being freehand
+
+172
+00:11:48,880 --> 00:11:54,020
+notes like use this when the user asks for the most mistral
+
+173
+00:11:54,520 --> 00:11:57,220
+large or the most cost effective transcription layer.
+
+174
+00:11:58,340 --> 00:12:02,740
+The final one in the in the actual transcription skill
+
+175
+00:12:03,299 --> 00:12:07,300
+was local
+
+176
+00:12:07,540 --> 00:12:11,700
+inference Example here would be if the user is running.
+
+177
+00:12:12,260 --> 00:12:16,040
+I'm running Parakeet on my own server at home and
+
+178
+00:12:16,540 --> 00:12:20,480
+I say I want to transcribe this on the server using Whisper, using Parakeet,
+
+179
+00:12:21,760 --> 00:12:26,000
+that we have a skill for doing that. So that the one transcription skill can
+
+180
+00:12:26,500 --> 00:12:29,960
+support routing it out to a cloud provider, routing it locally
+
+181
+00:12:30,460 --> 00:12:31,280
+to inference on the machine.
+
+182
+00:12:34,080 --> 00:12:38,080
+The final leg of the plugin or the skill of myleg is what
+
+183
+00:12:38,580 --> 00:12:42,090
+you could call post processing. Sorry,
+
+184
+00:12:42,590 --> 00:12:45,690
+I skipped. I'm gonna have to, we're gonna have to reassemble this voice note a
+
+185
+00:12:46,190 --> 00:12:49,570
+little bit, or rather reorder the text. Because I've as I
+
+186
+00:12:50,070 --> 00:12:53,770
+thought about all the little stages, I've jumped around a bit. Pre processing
+
+187
+00:12:55,450 --> 00:12:59,210
+comes before inference and this isn't something that I always do,
+
+188
+00:12:59,530 --> 00:13:03,130
+but it's like it's worth doing in
+
+189
+00:13:03,370 --> 00:13:06,530
+more cases than it isn't. And what I mean by this is if I record
+
+190
+00:13:07,030 --> 00:13:09,970
+on my. I try to record a bit rate for ASR,
+
+191
+00:13:10,370 --> 00:13:14,090
+but sometimes I don't. And the
+
+192
+00:13:14,590 --> 00:13:18,450
+two legs of this skill are firstly down sampling.
+
+193
+00:13:18,690 --> 00:13:22,050
+So basically converting stereo to mono and
+
+194
+00:13:22,690 --> 00:13:26,050
+taking audio that's at a bitrate that isn't needed
+
+195
+00:13:26,550 --> 00:13:30,450
+and reducing it to the bit rate that the model expects.
+
+196
+00:13:30,690 --> 00:13:34,260
+And this differs a lot, but there can be a
+
+197
+00:13:34,760 --> 00:13:38,820
+sane default and maybe one variant of this that does it specifically for,
+
+198
+00:13:39,320 --> 00:13:41,900
+let's say the Gemini API, which I can't remember exactly what it has.
+
+199
+00:13:42,780 --> 00:13:46,860
+The second leg under this one is VAD and silence
+
+200
+00:13:47,360 --> 00:13:50,980
+truncation. And again the objective is just to take the audio that
+
+201
+00:13:51,480 --> 00:13:55,660
+we're going to be sending for transcription and firstly get it into the ideal format,
+
+202
+00:13:55,740 --> 00:14:00,730
+technically reducing the file size and also getting us in
+
+203
+00:14:01,230 --> 00:14:04,050
+good condition and also trimming out a bit of silence that we don't need to
+
+204
+00:14:04,550 --> 00:14:07,650
+be sending up to the API. And I think it's a good skill to do
+
+205
+00:14:08,130 --> 00:14:12,410
+whether we're doing local or remote. The failure
+
+206
+00:14:12,910 --> 00:14:16,569
+mode is over aggressive VAD and losing context.
+
+207
+00:14:17,069 --> 00:14:21,130
+So the default preset should be pretty conservative. Like if I
+
+208
+00:14:21,630 --> 00:14:25,170
+really don't say anything for 10 seconds, you know, trim that down to
+
+209
+00:14:25,670 --> 00:14:28,950
+half a second. Those are the kind of things that it's intended to
+
+210
+00:14:29,450 --> 00:14:31,590
+catch maybe six seconds instead of 10.
+
+211
+00:14:32,710 --> 00:14:36,190
+So that comes before inference. And the final one is what I was going
+
+212
+00:14:36,690 --> 00:14:40,790
+to describe as post processing. And what I meant is we are
+
+213
+00:14:41,430 --> 00:14:44,070
+getting back what we got back from the API.
+
+214
+00:14:45,510 --> 00:14:49,670
+And the most classic pattern I will use is,
+
+215
+00:14:49,750 --> 00:14:53,610
+let's say I'm recording a voice note for plug in development, which is actually
+
+216
+00:14:54,110 --> 00:14:57,570
+this voice note is a demo of the
+
+217
+00:14:58,070 --> 00:15:01,250
+whole system. I'll say my general principle
+
+218
+00:15:01,750 --> 00:15:05,490
+is I always want the original verbatim version, even if it's not actually useful
+
+219
+00:15:05,990 --> 00:15:09,850
+to me. And we'll call that raw raw txt,
+
+220
+00:15:10,250 --> 00:15:13,610
+for example. And if it has
+
+221
+00:15:13,770 --> 00:15:18,100
+timestamps where we get back srt raw srt that's
+
+222
+00:15:18,600 --> 00:15:21,540
+almost never the actual thing I want to be working with.
+
+223
+00:15:22,580 --> 00:15:26,100
+So what I'll typically do is create,
+
+224
+00:15:26,340 --> 00:15:30,140
+then have cleanup. And cleanup is
+
+225
+00:15:30,640 --> 00:15:32,100
+basically applying a system prompt. Like.
+
+226
+00:15:36,100 --> 00:15:39,980
+Your task is to take the text received from ASR, add paragraph
+
+227
+00:15:40,480 --> 00:15:46,070
+spacing, remove disfluencies if
+
+228
+00:15:46,570 --> 00:15:50,150
+the user started a sentence. And so that's, I would say, conservative level.
+
+229
+00:15:50,650 --> 00:15:53,710
+In fact, I just, just did that. And then there's a bit more, there's a
+
+230
+00:15:54,210 --> 00:15:59,189
+slightly more aggressive one that says, you know, add headings if
+
+231
+00:15:59,689 --> 00:16:02,910
+the user repeated something, remove clear redundancy.
+
+232
+00:16:03,070 --> 00:16:07,310
+And the riskiest one is if you can infer that the ASR mistranscribed
+
+233
+00:16:07,810 --> 00:16:11,440
+something, replace the mistranscription with what
+
+234
+00:16:11,940 --> 00:16:15,800
+you can reasonably infer that it was intended to be. So you could call
+
+235
+00:16:16,300 --> 00:16:18,520
+those post processing steps light and heavy,
+
+236
+00:16:19,560 --> 00:16:23,360
+heavy being the more extensive one. And the default
+
+237
+00:16:23,860 --> 00:16:27,200
+can be light so that we take the raw text. And this I
+
+238
+00:16:27,700 --> 00:16:30,760
+typically will just ask the agentic harness to do.
+
+239
+00:16:31,260 --> 00:16:35,040
+But we could just as easily have
+
+240
+00:16:35,540 --> 00:16:39,100
+post processing support that uses a model called S1
+
+241
+00:16:39,600 --> 00:16:43,660
+Mini by Super Whisper or uses
+
+242
+00:16:43,980 --> 00:16:45,660
+Just a Cloud LLM.
+
+243
+00:16:46,780 --> 00:16:49,620
+And what I'd like to have is it like the default is just use the
+
+244
+00:16:50,120 --> 00:16:53,820
+agent but as an option
+
+245
+00:16:54,300 --> 00:16:58,020
+using actually sending out an API
+
+246
+00:16:58,520 --> 00:17:01,860
+call. So it would be taking the raw ASR text, sending it back to
+
+247
+00:17:02,360 --> 00:17:05,940
+that. The second post processing step I'll often
+
+248
+00:17:06,440 --> 00:17:10,900
+ask for is in this case, this is a development brief and simply
+
+249
+00:17:11,400 --> 00:17:14,140
+from this audio we can. As I've mentioned, some of it's out of order.
+
+250
+00:17:14,380 --> 00:17:18,620
+I remember that there's a post processing step after I described processing
+
+251
+00:17:19,100 --> 00:17:22,500
+and that's actually a very good example of what I
+
+252
+00:17:23,000 --> 00:17:26,860
+might call restructuring for development brief, in which case we can
+
+253
+00:17:27,360 --> 00:17:30,940
+take the cleaned up version of the text and we can then restructure it.
+
+254
+00:17:31,020 --> 00:17:34,260
+And what I like to do as my long
+
+255
+00:17:34,760 --> 00:17:38,820
+standing practice is to always keep all of these artifacts because it's text,
+
+256
+00:17:39,320 --> 00:17:43,420
+it's very lightweight, there's no reason not to. So I never would want
+
+257
+00:17:43,920 --> 00:17:47,380
+to just guess the cleaned up version For a software spec or for a plugin
+
+258
+00:17:47,880 --> 00:17:51,260
+spec I'd want to get raw plus cleaned plus
+
+259
+00:17:53,100 --> 00:17:56,340
+we could call the last artifactspec md, which is the
+
+260
+00:17:56,840 --> 00:18:00,630
+one that's optimized. And the final stage of this
+
+261
+00:18:01,130 --> 00:18:04,030
+chain is saving these transcripts.
+
+262
+00:18:05,150 --> 00:18:08,710
+So in the case of a GitHub repo, most commonly would be
+
+263
+00:18:09,210 --> 00:18:12,710
+within the repository itself. And sometimes there
+
+264
+00:18:13,210 --> 00:18:16,710
+might be additional targets like I can save. We could have
+
+265
+00:18:17,210 --> 00:18:18,270
+one for creating a subfolder.
+
+266
+00:18:20,270 --> 00:18:24,350
+The user defines a transcribed folder
+
+267
+00:18:24,850 --> 00:18:28,690
+in their Google Drive and define subfolders
+
+268
+00:18:29,190 --> 00:18:31,730
+for specific types of commonly used voice notes.
+
+269
+00:18:33,570 --> 00:18:37,930
+The final post processing step I mentioned reformatting
+
+270
+00:18:38,430 --> 00:18:41,930
+for Voice Note for software Briefs and that's a very open
+
+271
+00:18:42,430 --> 00:18:46,090
+ended step that we can again have support for using the
+
+272
+00:18:46,590 --> 00:18:49,770
+Agentic harness or using an external tool. Other common ones
+
+273
+00:18:50,270 --> 00:18:51,310
+would be to do list,
+
+274
+00:18:53,870 --> 00:18:56,510
+blog outline, blog post.
+
+275
+00:18:57,710 --> 00:19:01,150
+It's really an almost endless list where the user can
+
+276
+00:19:01,230 --> 00:19:04,910
+provide a targeted format, some stylistic directions
+
+277
+00:19:05,310 --> 00:19:08,870
+and the idea is that the text gets reshaped
+
+278
+00:19:09,370 --> 00:19:10,830
+according to those needs. For a transcript,
+
+279
+00:19:12,990 --> 00:19:18,280
+one very specific one would be diarized
+
+280
+00:19:19,080 --> 00:19:22,440
+transcripts. Let's say I send up an interview, a 50 minute interview
+
+281
+00:19:23,560 --> 00:19:27,160
+and I upload it to. We use Assembly AI and
+
+282
+00:19:27,660 --> 00:19:31,240
+it doesn't have speaker identification. It comes back as Speaker 1, 2, 3.
+
+283
+00:19:32,920 --> 00:19:37,000
+And what I can what a common variation of the skill I'll use is
+
+284
+00:19:37,500 --> 00:19:41,320
+to say the speakers are me, I'm the male voice and the female
+
+285
+00:19:41,820 --> 00:19:45,620
+speaker is my wife Hannah. So. So you can either infer
+
+286
+00:19:46,180 --> 00:19:49,420
+who's who or I'll
+
+287
+00:19:49,920 --> 00:19:53,860
+listen for 30 seconds and tell you this sentence is me. The sentence is Hannah,
+
+288
+00:19:54,020 --> 00:19:58,180
+diarize accordingly. And the final leg
+
+289
+00:19:58,660 --> 00:20:02,020
+this is so we talked about post processing and this maybe is better looked
+
+290
+00:20:02,520 --> 00:20:06,260
+at as a final step in the chain formatting. So let's say,
+
+291
+00:20:06,760 --> 00:20:10,060
+let's take the example of a call, a call transcript,
+
+292
+00:20:10,560 --> 00:20:14,300
+long form call transcript. So we get it via assembly, we diarize
+
+293
+00:20:14,800 --> 00:20:18,500
+it and then I'll often say something like using tipstypst,
+
+294
+00:20:19,000 --> 00:20:23,220
+the typesetting library, I want to create
+
+295
+00:20:23,720 --> 00:20:26,900
+this as a PDF, use little speech bubbles at
+
+296
+00:20:27,400 --> 00:20:29,940
+the top, have like family meeting,
+
+297
+00:20:30,580 --> 00:20:34,750
+discussing vacation plans and
+
+298
+00:20:35,250 --> 00:20:39,030
+then this can be really kind of brought. I think
+
+299
+00:20:39,530 --> 00:20:42,350
+the power in this sort of toolkit is when you sort of mix it together.
+
+300
+00:20:42,850 --> 00:20:45,510
+So I can say yeah, we don't need to have like what I'd like to
+
+301
+00:20:46,010 --> 00:20:49,910
+create from this is a. Is a short summary of let's say something more substantial,
+
+302
+00:20:50,410 --> 00:20:53,070
+school plans, right? Talking about what school options for our kid.
+
+303
+00:20:54,110 --> 00:20:58,030
+I don't need to have the whole verbatim discussion, but take a cleaned
+
+304
+00:20:58,530 --> 00:21:01,800
+up version key decisions like
+
+305
+00:21:02,300 --> 00:21:04,200
+literally in minutes. Basically that's the word I'm looking for.
+
+306
+00:21:05,880 --> 00:21:09,160
+Save this to our Google Drive and then email us a link when it's
+
+307
+00:21:09,660 --> 00:21:13,000
+ready. So that's kind of like end to end in this case here's an audio
+
+308
+00:21:13,500 --> 00:21:17,320
+file assembly AI is the choice for long form transcription
+
+309
+00:21:18,040 --> 00:21:22,640
+post processing do a little bit of disfluency
+
+310
+00:21:23,140 --> 00:21:26,710
+removal no more than that then do PDF and in
+
+311
+00:21:27,210 --> 00:21:30,590
+this case I'd probably say my preference on this one I'm
+
+312
+00:21:31,090 --> 00:21:34,590
+going to contradict something I said earlier would be the ideal version
+
+313
+00:21:35,090 --> 00:21:38,710
+of this skill might be give me the PDF and
+
+314
+00:21:39,210 --> 00:21:42,710
+raw txt and the audio clip down sampled
+
+315
+00:21:42,870 --> 00:21:46,270
+and put those all in Google Drive and my rationale for doing that
+
+316
+00:21:46,770 --> 00:21:49,990
+just to explain if this were a business use case sure I'd
+
+317
+00:21:50,490 --> 00:21:53,790
+want to have the final document but just for proof in case something turned out
+
+318
+00:21:54,290 --> 00:21:57,970
+to be mistranscribed or someone said this wasn't what I said that
+
+319
+00:21:58,470 --> 00:22:02,570
+you'd always have the original audio plus the original raw transcript to assist if
+
+320
+00:22:03,070 --> 00:22:06,650
+that's required. It's more of a compliance and safety check than for any
+
+321
+00:22:07,150 --> 00:22:10,690
+other reason. So that's the whole transcription plugin end to
+
+322
+00:22:11,190 --> 00:22:12,010
+end as I envision it.
+

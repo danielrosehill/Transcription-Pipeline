@@ -1,0 +1,9 @@
+{
+  "_about": "Generic speech EQ for ASR. Cuts rumble and boxiness, adds a little presence; gentle on purpose. Copy to your preferences folder and edit, or fit one to your own voice.",
+  "highpass_hz": 80,
+  "eq": [
+    {"f": 250, "width_octaves": 1.0, "gain_db": -2.0},
+    {"f": 3000, "width_octaves": 1.0, "gain_db": 2.0}
+  ],
+  "compressor": {"threshold_db": -20, "ratio": 2.0, "attack_ms": 15, "release_ms": 200, "makeup_db": 2}
+}

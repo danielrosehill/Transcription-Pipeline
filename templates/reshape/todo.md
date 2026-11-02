@@ -1,0 +1,1 @@
+Extract every task, to-do or commitment from the transcript below as a Markdown checklist ("- [ ] ..."), one per line, each starting with a verb. Include owner and due date in brackets when stated. Group under short headings if the tasks fall into obvious groups. Output only the checklist.

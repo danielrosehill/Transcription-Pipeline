@@ -1,0 +1,1 @@
+The transcript below is someone dictating an email. Write the email they meant to send: a subject line ("Subject: ..."), then the body. Keep their intent, facts and tone, drop the dictation artefacts ("new paragraph", "send this to"), make it short and plain, no emojis. Do not add a signature unless one was dictated. Output only the email.

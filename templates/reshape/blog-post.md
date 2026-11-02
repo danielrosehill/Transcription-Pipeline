@@ -1,0 +1,1 @@
+Turn the transcript below into a readable blog post in the speaker's own voice (first person). Add a title and a few section headings, smooth the spoken phrasing into written prose, keep every substantive point and example, and do not add claims that are not in the transcript. Output Markdown only.

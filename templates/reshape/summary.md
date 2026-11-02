@@ -1,0 +1,1 @@
+Summarise the transcript below in one short paragraph (at most 120 words) that a reader who will not read the transcript can rely on: the main point, key decisions or conclusions, and anything that needs doing. Then up to five bullets of the most important specifics (names, numbers, dates). Output Markdown only.

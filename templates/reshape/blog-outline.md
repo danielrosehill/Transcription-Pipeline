@@ -1,0 +1,1 @@
+Turn the transcript below into a blog post outline in the speaker's voice: a working title, a one-sentence angle, then section headings with 2-4 bullets each carrying the speaker's actual points and examples. Do not add points that are not in the transcript; list gaps the post would need under "To research". Output Markdown only.

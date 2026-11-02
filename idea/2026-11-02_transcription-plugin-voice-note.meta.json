@@ -1,0 +1,19 @@
+{
+  "input": "idea/2026-11-02_transcription-plugin-voice-note.mp3",
+  "backend": "assemblyai",
+  "model_requested": "universal",
+  "model_resolved": "universal-2",
+  "prompt_mode": null,
+  "elapsed_s": 17.0,
+  "audio_duration_s": 1333,
+  "cost_usd": null,
+  "words": 3313,
+  "chunks": null,
+  "created": "2026-11-02T13:36:50+0200",
+  "files": {
+    "raw_txt": "idea/2026-11-02_transcription-plugin-voice-note.raw.txt",
+    "raw_json": "idea/2026-11-02_transcription-plugin-voice-note.raw.json",
+    "raw_srt": "idea/2026-11-02_transcription-plugin-voice-note.raw.srt",
+    "meta": "idea/2026-11-02_transcription-plugin-voice-note.meta.json"
+  }
+}
