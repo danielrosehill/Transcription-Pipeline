@@ -1,5 +1,7 @@
 # Transcription Pipeline
 
+**Write-up:** [A Claude Code transcription plugin that replaced five of my projects](https://blog.danielrosehill.com/posts/claude-code-transcription-plugin-transcription-pipeline-h5lyzy/)
+
 Agent skills for turning recordings into usable text, in stages:
 
 ```
